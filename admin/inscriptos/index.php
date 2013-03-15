@@ -48,7 +48,7 @@
 			?>
 			</div>
     	</div>
-    	
+
     	<div class="row">
     		<div class="span1">
 				<a href="agregar.php" class="btn btn-primary">
@@ -69,27 +69,29 @@
     							<th>#</th>
     							<th>Nombres</th>
     							<th>Apellidos</th>
+    							<th>Certificado</th>
     							<th>Fecha registro</th>
     							<th>Acciones</th>
     						</thead>
     						<tbody>
     							<?php if(!empty($inscriptos)):?>
-    							<?php foreach ($inscriptos as $asistente): ?>
+    							<?php foreach ($inscriptos as $inscripto): ?>
 								<tr> 
-									<td><?php echo $asistente['id']; ?></td>
-							        <td><?php echo utf8_encode($asistente['nombres']); ?></td>
-							        <td><?php echo utf8_encode($asistente['apellidos']); ?></td>
+									<td><?php echo $inscripto['id']; ?></td>
+							        <td><?php echo utf8_encode($inscripto['nombres']); ?></td>
+							        <td><?php echo utf8_encode($inscripto['apellidos']); ?></td>
+							        <td><input type="checkbox" name="certificado" disabled="disabled" <?php if($inscripto['certificado']):?> checked <?php endif;?> ></td>
 									<td>
 										<?php setlocale(LC_TIME, "spanish");
-											$fecha = strftime(" %d/%m/%y %H:%M:%S ",strtotime($asistente['fecha_registro']));
+											$fecha = strftime(" %d/%m/%y %H:%M:%S ",strtotime($inscripto['fecha_registro']));
 											echo $fecha;
 										?>
 									</td>
 									<td>
-										<a class="btn btn-success" title="Editar" href="editar.php?id=<?php echo $asistente['id']?>">
+										<a class="btn btn-success" title="Editar" href="editar.php?id=<?php echo $inscripto['id']?>">
 											<i class="icon-pencil icon-white"></i>
 										</a>
-										<a href="index.php?opcion=eliminar&id=<?php echo $asistente['id'];?>"  class="btn btn-danger" onclick="return confirm('¿Está seguro?');" title="Eliminar">
+										<a href="index.php?opcion=eliminar&id=<?php echo $inscripto['id'];?>"  class="btn btn-danger" onclick="return confirm('¿Está seguro?');" title="Eliminar">
 											<i class="icon-trash icon-white"></i>
 										</a>
 							         </td>

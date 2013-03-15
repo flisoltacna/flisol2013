@@ -35,7 +35,18 @@
 	    	<li><a href="#">Home</a> <span class="divider">/</span></li>
 	    	<li class="active">Publicaciones</li>
     	</ul>
-
+    	<div class="row">
+    		<div class="span12">
+    		<?php 
+				if(isset($_GET['mensaje'])){
+					switch ($_GET['mensaje']) {
+						case 1: alertas("La operación se llevo correctamente.",1); break;
+						case 2: alertas("La operación no se completo. Intente de nuevamente",2); break;
+					}		
+				}
+			?>
+			</div>
+    	</div>
     	<div class="row">
     		<div class="span1">
 				<a href="agregar.php" class="btn btn-primary">
@@ -46,6 +57,7 @@
     	<?php 
     		$publicaciones = @query_data("SELECT * FROM publicaciones");
     	?>
+    	
     	<div class="row-fluid">
     		<div class="span12">
     			<div class="box">

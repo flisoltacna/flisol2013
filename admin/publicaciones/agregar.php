@@ -70,7 +70,7 @@
     			</div>	
     	</div>
 	</div> <!-- /container -->
-	
+
 <script type="text/javascript">
 	CKEDITOR.replace('Descripcion',{
 		toolbar: 'standard',

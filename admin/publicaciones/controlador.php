@@ -7,7 +7,10 @@
 		$fecha = fecha_hora();
 		$id_usuario = $_POST['usuario'];
 		if(agregar_publicacion($titulo,$descripcion,$fecha,$id_usuario)){
-			header("location:index.php");
+			header("location:index.php?mensaje=1");
+		}
+		else{
+			header("location:index.php?mensaje=2");	
 		}
 	}
 

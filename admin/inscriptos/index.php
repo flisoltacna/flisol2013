@@ -37,6 +37,19 @@
     	</ul>
 
     	<div class="row">
+    		<div class="span12">
+    		<?php 
+				if(isset($_GET['mensaje'])){
+					switch ($_GET['mensaje']) {
+						case 1: alertas("La operación se llevo correctamente.",1); break;
+						case 2: alertas("La operación no se completo. Intente de nuevamente",2); break;
+					}		
+				}
+			?>
+			</div>
+    	</div>
+    	
+    	<div class="row">
     		<div class="span1">
 				<a href="agregar.php" class="btn btn-primary">
 					<i class="icon-plus icon-white"></i><br>Agregar

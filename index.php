@@ -168,7 +168,7 @@
 		<div id="evento">
 			<!--<img src="imagenes/fotoflisol.png" />-->
 			<?php 
-				$publicacion = query('SELECT * FROM publicaciones WHERE titulo = "SOBRE FLISOL"');
+				$publicacion = @query('SELECT * FROM publicaciones WHERE titulo = "SOBRE FLISOL"');
 			?>
 			<section>
 				<hgroup>

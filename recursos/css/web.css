@@ -180,7 +180,7 @@ padding: 0px 10px 0px 10px;
 width: 650px;
 height: 400px;
 display: inline-block;
-background: red;
+background: #616161;
 float: right;
 }
 #info p ,h1{
@@ -239,6 +239,8 @@ font-size: 25px;
         -o-background-size: cover;
         border-bottom: 8px solid #8A1F1F;
 }
+
+/*=====================FORMULARIO=================*/
 fieldset{
 	border:none;
 	border-bottom:1px dashed #B87D25;
@@ -269,7 +271,7 @@ input{
 	color:#6F6F6F;
 	font-size:20px;
 	display: inline;
-	width: 250px;
+	width: 280px;
 	height: 23px;
 	margin: 5px;
 	font-family: 'Advent Pro', sans-serif;
@@ -293,6 +295,18 @@ input{
 	padding-top: 5px;
 color: #fff
 }
+#certificado{
+	width: 400px;
+	background: transparent;
+	display: inline-block;
+}
+#certificado input{
+	width: 30px;
+}
+#certificado label input{
+	display: inline-block;
+}
+
 #banner{
 	width: 960px;
 	height:100%;
@@ -454,6 +468,7 @@ font-family: 'Julius Sans One', sans-serif;
 font-size: 20px;
 padding: 5px;border: none;
 }
+/*===================Pie de pagina=======================*/
 footer{
 	width:100%;
 	background: #CCC;

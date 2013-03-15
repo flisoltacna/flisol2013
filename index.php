@@ -1,3 +1,6 @@
+<?php 
+	require_once('config/conexion.php');
+?>
 <!DOCTYPE HTML>
 <html lang="es-PE">
 <head>
@@ -164,38 +167,16 @@
 		<div class="cinta"></div>
 		<div id="evento">
 			<!--<img src="imagenes/fotoflisol.png" />-->
+			<?php 
+				$publicacion = query('SELECT * FROM publicaciones WHERE titulo = "SOBRE FLISOL"');
+			?>
 			<section>
-				<hgroup><h3>SOBRE FLISOL</h3></hgroup>
-			<h4>¿Qué es el FLISOL?</h4>
-			<p>
-			El Festival Latinoamericano de Instalación de Software Libre (FLISoL) es el evento de difusión de Software Libre más grande en Latinoamérica. Se realiza desde el año 2005 y desde el 2008 se adoptó su realización el 4to Sábado de abril de cada año. Su principal objetivo es promover el uso del software libre, dando a conocer al público en general su filosofía, alcances, avances y desarrollo. A tal fin, las diversas comunidades locales de software libre (en cada país/ciudad/localidad), organizan simultáneamente eventos en los que se instala, de manera gratuita y totalmente legal, software libre en las computadoras que llevan los asistentes.</p>
-			
-			<h4>¿Quiénes lo organizan?</h4><p>
-			El evento esta siendo organizado principalmente por la Comunidad de Software Libre BASADRINUX, sin embargo todas las universidades, comunidades de software libre, particulares interesados en el tema, etc., se encuentran cordialmente invitados a organizar y a formar parte del evento.
-			</p>
-			<h4>¿A quién está dirigido? </h4>
-			<p>El evento está dirigido a todo tipo de público: estudiantes, académicos, empresarios, trabajadores, funcionarios públicos, entusiastas y a cualquier persona interesada en el tema de software libre. </p>
-			<h4>¿Cuánto cuesta? </h4>
-			<p>La asistencia y la participación al evento es totalmente libre y gratuita. </p>
-			<h4>¿Qué puedo aprender en el evento? </h4>
-			<ul>
-				<li>Conocerá que es el software libre.</li>
-				<li>Tendrá la oportunidad de instalar software libre en su computadora personal.</li>
-				<li>Conocerá sobre la filosofía, cultura y organización alrededor del software libre.</li>
-				<li>Conocerá sobre modelos de negocios de software libre.</li>
-				<li>Conocerá alternativas libres al software privativo tradicional.</li>
-			</ul>
-			<h4>¿Que actividades se llevarán a cabo en el evento? </h4>
-			<ul>
-			<li>Podrá obtener CD’s y DVD’s con software libre en los stands dedicados a las Distribuciones GNU/Linux y Software Libre más populares.</li>
-			<li>Espacios donde los visitantes podrán acercarse con sus computadoras personales a instalar software libre.</li>
-			<li>Ponencias sobre temas y proyectos relacionados al software libre.</li>
-			<li>Mesa de juegos libres multijugador.</li>
-			<li>Rifas de artículos promocionales.</li>
-			</ul>
-
-
+				<hgroup>
+					<h3><?php echo $publicacion['titulo'];?></h3>
+				</hgroup>
+				<?php echo $publicacion['descripcion'];?>
 			</section>
+			
 			<div id="masdatos">
 				<div id="masdatos01">
 					<h3>Encuesta</h3>

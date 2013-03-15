@@ -54,7 +54,7 @@
     						<div class="control-group">
     							<label for="Titulo">Titulo</label>
     							<div class="controls">
-    								<input name="titulo" class="span8" maxlength="120" type="text" id="Titulo" required="required" value = <?php echo $publicacion['titulo'];?> />
+    								<input name="titulo" class="span8"  type="text" id="Titulo" required="required" value="<?php echo $publicacion['titulo'];?>" />
     							</div>
     						</div>
     						<div class="control-group">

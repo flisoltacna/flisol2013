@@ -56,7 +56,7 @@
     						<div class="control-group">
     							<label for="Descripcion">Descripción</label>
     							<div class="controls">
-    								<textarea name="descripcion" class="span9" rows="3" id="Descripcion"></textarea>
+    								<textarea name="descripcion" class="span9" rows="5" id="Descripcion"></textarea>
     							</div>
     						</div>
     						<div class="form-actions">
@@ -70,5 +70,13 @@
     			</div>	
     	</div>
 	</div> <!-- /container -->
+	
+<script type="text/javascript">
+	CKEDITOR.replace('Descripcion',{
+		toolbar: 'standard',
+    	width: '100%',
+    	height: '200'
+	});
+</script>
 
 <?php footer();?>

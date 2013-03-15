@@ -10,7 +10,7 @@
 			session_start();
 			$_SESSION['session']=true;
 			$_SESSION['usuario_id']=$consulta['id'];
-			$url= URL_APP.'admin/encuestas';
+			$url= URL_APP.'admin/publicaciones';
 			header("location:$url");
 		}
 		else{

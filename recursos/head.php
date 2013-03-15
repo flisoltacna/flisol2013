@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/bootstrap-responsive.min.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script src="<?php echo URL_APP;?>recursos/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/ckeditor/ckeditor.js"></script>
 	<!--<script src="<?php //echo URL_APP;?>recursos/js/jquery.dataTables.js"></script>
 	<script src="<?php //echo URL_APP;?>recursos/js/script.js"></script>-->
 	<!--[if lt IE 9]>

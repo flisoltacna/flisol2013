@@ -1,0 +1,480 @@
+body{
+	background: #6B1616;	
+	margin: 0;
+	color:#424242;
+}
+::selection {
+background: #AF3E3E;
+}
+h4{
+	padding-left: 15px;
+	margin: 0px;
+}
+#reloj{
+	width: 100%;
+	height: auto;
+	background: transparent;
+	padding-bottom: 0;
+}
+#reloj section{
+	display: inline-block;
+	text-align: center;
+}
+#falta{
+	font-family: 'Julius Sans One', sans-serif;
+font-weight: normal;
+color: white;
+font-size: 20px;
+}
+#contenedor{
+	background: #fff;
+	margin:0 auto;
+	width: 960px;
+	height: auto;
+	margin-bottom: 165px;
+			border-radius: 0px 0px 15px 15px;
+	-webkit-border-radius: 0px 0px 15px 15px;
+	-moz-border-radius: 0px 0px 15px 15px;
+	-o-border-radius: 0px 0px 15px 15px;
+}
+h3{
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: normal;
+}
+h2{
+	text-align: center;
+}
+h2 a{
+	font-family: 'Julius Sans One', sans-serif;
+font-weight: normal;
+color:#fff;
+text-decoration: none;
+}
+#encabezado{
+	width: 100%;
+	height: auto;
+	background: #A51E1E;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+}
+#sol{
+	background: url('../../recursos/img/sol.png');
+	height: 20px;
+}
+header{
+	background: transparent;
+	width: 960px;
+	height: 130px;
+	margin: 0 auto;
+
+}
+#logo{
+
+	width: 300px;
+	height: 100%;
+	float: left;
+	text-align:center;
+}
+#logo img{
+width: 220px;
+height: auto;
+padding-top: 0;
+}
+nav{
+	width: 100%;
+height: auto;
+}
+#menutop{
+	width: 100%;
+	height: 90px;
+	background: transparent;
+}
+nav ul {
+margin: 0;
+margin-left: -45px;
+}
+nav li {
+display: inline-block;
+zoom: 1;
+list-style: none;
+text-align: center;
+vertical-align: top;
+width: 13%;
+}
+nav li a {
+background: url("../../recursos/img/fond-menu.png") no-repeat center 28px;
+color: #B6B6B6;
+font-size: 13px;
+padding-top: 15px;
+padding-bottom: 9px;
+display: block;
+text-decoration: none;
+-o-transition: .2s;
+-ms-transition: .2s;
+-moz-transition: .2s;
+-webkit-transition: .2s;
+transition: .2s;
+font-family: 'Julius Sans One', sans-serif;
+ }/*
+nav li:nth-child(1) a{
+background: url("../imagenes/ico-evento.png") no-repeat center 18px;
+}
+nav li:nth-child(2) a{
+background: url("../imagenes/ico-lugar.png") no-repeat center 18px;
+}
+nav li:nth-child(3) a{
+background: url("../imagenes/ico-cronograma.png") no-repeat center 18px;
+}
+nav li:nth-child(4) a{
+background: url("../imagenes/ico-organizadores.png") no-repeat center 18px;
+}
+nav li:nth-child(5) a{
+background: url("../imagenes/ico-inicio.png") no-repeat center 18px;
+}*/
+nav li a:hover{
+	background-color:rgba(0, 0, 0, 0.16);
+	color: #fff;
+	text-shadow:0px 0px 5px #fff;
+	background-position-y:-35px;
+	-o-transition: .2s;
+	-ms-transition: .2s;
+	-moz-transition: .2s;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+#titulo{
+	margin-top: 15px;
+	width: 960px;
+	height: 90px;
+	background: url('../../recursos/img/fondo-titulo.png');
+	position: absolute;
+	border-bottom: 5px solid #A51E1E;
+}
+#titulo h1{
+text-align: center;
+color: #fff;
+font-family: 'Julius Sans One', sans-serif;
+font-weight: normal;
+text-shadow:0px 0px 10px #fff;
+font-size: 30px;
+padding: 0px 10px 0px 10px;
+}
+
+#info{
+	position: absolute;	
+	width: 960px;
+	background: transparent;
+	margin-top: 120px;
+	color:#fff;	
+	text-align: center;
+}
+#info-izquierda{
+	width: 300px;
+	height: 400px;
+	background: rgba(7, 7, 7, 0.5);
+	display: inline-block;
+}
+#info-derecha{
+width: 650px;
+height: 400px;
+display: inline-block;
+background: red;
+float: right;
+}
+#info p ,h1{
+	font-family: 'Advent Pro', sans-serif;
+}
+.lema h3{
+color: #FFEF77;
+text-shadow: 0px 0px 15px white;
+font-size: 25px;
+}
+#Preinscripcion, #CerrarPreinscripcion{
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: 40px;
+}
+#Preinscripcion a {
+	text-decoration: none;
+	background: #FFA300;
+	color:#fff;
+	padding: 10px 20px;
+	border: 5px solid #C27C00;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 20px;
+	text-shadow:0px 0px 10px #000;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+#CerrarPreinscripcion a{
+	text-decoration: none;
+	background: #FF8A1F;
+	color:#fff;
+	padding: 10px 20px;
+	border: 5px solid #9C4500;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 20px;
+	text-shadow:0px 0px 10px #000;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+#Preinscripcion a:hover, #CerrarPreinscripcion a:hover{
+	text-shadow:0px 0px 10px #fff;
+}
+#fondobanner{
+	background:url("../../recursos/img/fondo-tacna02.jpg")no-repeat center;
+	width: 100%;
+	height: 630px;
+	background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        border-bottom: 8px solid #8A1F1F;
+}
+fieldset{
+	border:none;
+	border-bottom:1px dashed #B87D25;
+	margin: 0px;
+padding: 0px;
+}
+#formulario{
+	width: 100%;
+	height: auto;
+	background: #FF8A1F;
+	float: right;
+	margin: 120px 0px 0px 5px;
+	display: none;
+	text-align: center;
+	font-family: 'Julius Sans One', sans-serif;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
+	-webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
+	-o-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
+	-moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
+	-ms-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
+}
+#formulario p{
+	color: #fff;
+	font-size: 20px;
+	margin: 15px 0px;
+}
+input{
+	color:#6F6F6F;
+	font-size:20px;
+	display: inline;
+	width: 250px;
+	height: 23px;
+	margin: 5px;
+	font-family: 'Advent Pro', sans-serif;
+	border:3px solid #A0A0A0;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	-ms-border-radius: 6px;
+}
+#mysubmit{
+	background:#CF3131;
+	width: 200px;
+	height: 40px;
+	padding: 5px;
+	
+	border: 5px solid #c3c3c3;
+	color:#fff;
+}
+#result{
+	padding-top: 5px;
+color: #fff
+}
+#banner{
+	width: 960px;
+	height:100%;
+	background: transparent;
+	margin: 0 auto;
+}
+.cinta{
+	background:#BD2B2B url("../../recursos/img/cinta02.png");
+	width: 100%;
+	height: 20px;
+}
+.cinta2{
+	background:#BD2B2B url("../../recursos/img/triangulo.png");
+	width: 100%;
+	height: 20px;
+}
+.cinta3{
+	background:#fff url("../../recursos/img/cinta03.png");
+	width: 100%;
+	height: 20px;
+}
+#evento h3{
+	text-align: center;
+}
+#evento{
+	width: 100%;
+	height: auto;
+	color:#fff;
+	background: #BD2B2B;
+	padding-bottom: 15px;
+}
+#evento  section{
+	font-size: 15px;
+	font-family: 'Advent Pro', sans-serif;
+	width: 50%;
+height: auto;
+display: inline-block;
+}
+#evento section p{
+padding:0px 15px 15px 15px ;
+text-align : justify;
+}
+#masdatos{
+width: 49%;
+background: transparent;
+height: auto;
+float: right;display: inline-block;
+}
+#masdatos01{
+	width: 100%;
+	height: auto;
+	background: transparent;
+}
+#masdatos01 section{
+	padding: 15px;
+	width: 420px;
+	background: #555;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+#masdatos02{
+width: 100%;
+	height: auto;
+	background: transparent;
+
+}
+#masdatos02 img{
+	width: 228px;
+	padding: 0;
+}
+#masdatos02 img:hover{
+-webkit-transform:scale(1.8);
+-moz-transform:scale(1.8);
+-o-transform:scale(1.8);
+-webkit-transition-duration: 0.5s;
+-moz-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+}
+#lugar, #cronograma{
+	width:50%;
+	height: auto;
+	float: left;
+	text-align: center;
+	background: #fff;
+}
+#lugar iframe{
+	border:10px solid #F0F0F0;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	-ms-border-radius: 6px;
+}
+#lugar p{
+	font-family: 'Advent Pro', sans-serif;
+}
+#cronograma img{
+	width: 95%;
+}
+#organizadores{
+	width: 100%;
+	background: #FFD479;
+	display: inline-block;
+	text-align: center;
+	border-top: 1px dashed #AFAFAF;
+	padding-bottom: 15px;
+	margin-top: 15px;
+}
+#organizadores img{
+	display: inline-block;
+	width: 45%;
+	padding: 6px;
+}
+#auspicios{
+	width: 100%;
+	padding: 5px 0px;
+	text-align: center;
+	background: #fff;
+		border-radius: 0px 0px 15px 15px;
+	-webkit-border-radius: 0px 0px 15px 15px;
+	-moz-border-radius: 0px 0px 15px 15px;
+	-o-border-radius: 0px 0px 15px 15px;
+}
+#auspicios img{
+	width: 15%;
+	display: inline-block;
+	margin: 15px;
+	-webkit-filter: grayscale(1);
+	opacity: .8;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	filter: alpha(opacity=80);
+	-o-transition: .2s;
+	-ms-transition: .2s;
+	-moz-transition: .2s;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+#auspicios img:hover{
+	-webkit-filter: grayscale(0);
+	opacity: 1;
+	-ms-filter: none;
+	filter: none;
+	-o-transition: .2s;
+	-ms-transition: .2s;
+	-moz-transition: .2s;
+	-webkit-transition: .2s;
+	transition: .2s;	
+}
+#defaultCountdown2 
+{ 
+width: 500px; 
+height: 45px; 
+float:left; 
+background: transparent;
+color:#fff;
+font-family: 'Julius Sans One', sans-serif;
+font-size: 20px;
+padding: 5px;border: none;
+}
+footer{
+	width:100%;
+	background: #CCC;
+	border-radius: 0px 0px 15px 15px;
+	-webkit-border-radius: 0px 0px 15px 15px;
+	-moz-border-radius: 0px 0px 15px 15px;
+	-o-border-radius: 0px 0px 15px 15px;
+}
+footer p{
+	text-align: center;
+	padding: 5px;
+	font-family: 'Advent Pro', sans-serif;
+	color: #4E4E4E;
+}
+
+
+
+
+
+
+
+
+
+

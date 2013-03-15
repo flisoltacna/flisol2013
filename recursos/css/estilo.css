@@ -1,0 +1,238 @@
+body{
+	padding-top: 60px;
+    font-size: 13px;
+}
+.btn{
+    font-size: 13px;
+}
+.breadcrumb {
+    background-color: #FBFBFB;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);
+    background-repeat: repeat-x;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    list-style: none outside none;
+    margin: 0 0 18px;
+    padding: 7px 14px;
+}
+/*================= Login =================================*/
+.login-container {
+    margin: 70px auto 0;
+    width: 295px;
+}
+.login-container .login-header {
+    background: -moz-linear-gradient(center top , #4A515B 0%, #3C4049 100%) repeat scroll 0 0 transparent;
+    background: #3C4049;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 1em;
+    padding: 3px 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.login-header h3 {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 22px;
+}
+.login-container .login-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px 5px;
+}
+
+/*========================== box =======================*/
+.box {
+    border: 1px solid #ddd;
+    border-radius: 3px 3px 3px 3px;
+    border-width: 0 1px 1px;
+    margin: 15px 0; 
+}
+.box:before, .box:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.box:after {
+    clear: both;
+}
+.box h4.box-header {
+    background-color: #FBFBFB;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F5F5F5);
+    background-repeat: repeat-x;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    font-size: 13px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 7px;
+    size: 10px;
+}
+.box-content {
+    padding: 18px 12px 0;
+}
+.round-top {
+    border-radius: 3px 3px 0 0;
+}
+
+/*================ Datatables ======================*/
+.dataTables_wrapper{
+    display:table;
+    width:100%;
+}
+.dataTables_length {
+    width: 40%;
+    float: left;
+}
+div.dataTables_length select {
+    width: 75px;
+    font-size:12px;
+}
+.dataTables_filter {
+    width: 50%;
+    float: right;
+    display:block;
+}
+.dataTables_filter input {
+    width:97%;
+    float:none;
+    padding:3px 0 3px 4px;
+    background: url(../img/search_s.png) no-repeat 98% center #fff !important;
+}
+div.dataTables_info {
+    padding-top: 8px;
+}
+.dataTables_paginate {
+    width: 100%;
+    float: right;
+    text-align: right;  
+    padding:5px 0;
+}
+table.dataTable{
+    margin:0;
+}
+table.dataTable th:active {
+    outline: medium none;
+}
+.sort-index, .hidden {
+    left: -10000px;
+    position: absolute;
+    top: -10000px;
+    visibility: hidden;
+}
+.dataTables_wrapper .dataTables_paginate span.fg-button{
+    padding: 7px 14px;
+    line-height: 34px;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+    color: #0088cc;
+    cursor:pointer;
+}
+.dataTables_wrapper .dataTables_paginate span.first{
+    border-left: 1px solid #ddd;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.dataTables_wrapper .dataTables_paginate span.last{
+    border-right: 1px solid #ddd;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.dataTables_wrapper .dataTables_paginate span.ui-state-disabled{
+    color: #999999;
+    background-color: transparent;
+    cursor: default;
+}
+.dataTables_wrapper .dataTables_paginate span span.ui-state-disabled{
+    background-color: #f5f5f5;
+    color: #999999;
+    cursor: default;
+}
+/*================= Formulario encuesta ====================*/
+form{
+    margin: 0;
+}
+.form-actions{
+    padding: 19px 20px 5px;
+    margin-bottom: 0;
+}
+a.block-menu{
+    margin-right: 4px;
+}
+@media (max-width: 600px) {
+    .block-menu {
+        display: block;
+        margin-bottom: 5px;
+        padding: 6px 15px;
+        text-align: left;
+    }
+    .block-menu > button, button.block-menu {
+        width: 100%;
+    }
+    .block-hide-menu {
+        display: none;
+    }
+    .block-menu > button {
+        padding: 6px 15px;
+        text-align: left;
+    }
+    .block-menu > button .caret {
+        display: none;
+    }
+    .hide-screen-menu {
+        display: block;
+    }
+    .show-screen-menu-600 {
+        display: none !important;
+    }
+}
+/*===================== LISTADO DE OPCIONES ================================ */
+ul.listado {
+    margin:10px 0 20px;
+    padding:0;
+}
+ul.listado li a img{
+    width:140px;
+    height:120px;
+}
+ul.listado li {
+    display:block;
+    margin:0;
+    padding: 0 7px 5px;
+    position:relative;
+    border: 1px solid transparent;
+}
+ul.listado li a.delete {
+    background-repeat:no-repeat;
+    background-position:0 0;
+    display:block;
+    position:absolute;
+    text-indent:-9999px;
+    z-index:1;
+}
+ul.listado li:hover a.delete{
+    background-image:url(../img/icon_round_delete.png);
+    width:19px;
+    height:19px;
+    right:-5px;
+    top:-5px;
+}
+ul.listado li:hover {
+    border:1px solid #cccece;
+    background-color:#f8f8f8;
+    opacity: 0.7;
+    -webkit-box-shadow: 0px 3px 2px 1px rgba(0, 0, 0, 0.05);
+       -moz-box-shadow: 0px 3px 2px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 3px 2px 1px rgba(0, 0, 0, 0.05);
+}
+div.opciones {margin: 6px 15px 0 15px;}
+

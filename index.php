@@ -176,7 +176,7 @@
 				</hgroup>
 				<?php echo $publicacion['descripcion'];?>
 			</section>
-			
+
 			<div id="masdatos">
 				<div id="masdatos01">
 					<h3>Encuesta</h3>
@@ -242,7 +242,7 @@
 		</footer>	
 	</div>
 	<script type="text/javascript">
-		$.getJSON("http://picasaweb.google.com/data/feed/base/user/111966957349242981203/albumid/5855518971056638033?alt=json&kind=photo&hl=en_US&fields=entry(title,gphoto:numphotos,media:group(media:content,media:thumbnail),link)", 
+		$.getJSON("http://picasaweb.google.com/data/feed/base/user/111966957349242981203/albumid/5855518971056638033?alt=json&kind=photo&hl=en_US&max-results=8&fields=entry(title,gphoto:numphotos,media:group(media:content,media:thumbnail),link)", 
 				function(data) {
 				$.each(data.feed.entry, function(i,item){
 		            $("<img/>").attr("src", item.media$group.media$thumbnail[2].url).appendTo("#picasa");

@@ -363,7 +363,7 @@ width: 100%;
 }
 #masdatos02 img{
 	width: 228px;
-	padding: 0;
+	padding-right: 4px;
 }
 #masdatos02 img:hover{
 -webkit-transform:scale(1.8);

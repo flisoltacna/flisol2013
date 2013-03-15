@@ -156,7 +156,11 @@
 			<input type="text" name="email" size="27" placeholder = "E-mail" required />
 			<input type="text" name="fono" size="27" placeholder = "Telefono" required />
 			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
-
+			<div id="certificado">
+			<label>Certificado: (S/.__.__)</label>
+			<input type="radio" name="number" value="NO" /> No
+			<input type="radio" name="number" value="SI" /> Si
+			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Hacer Inscripción"/>
 		</fieldset>	
 	<!-- RESULTADO--> 

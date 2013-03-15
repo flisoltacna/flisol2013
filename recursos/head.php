@@ -3,10 +3,12 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Universidad Nacional Jorge Basadre Grohmann</title>
+	<title>Flisol 2013</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="description" content="Festival latinoamericano de instalacion de Software libre 2013 - Flisol tacna">
+	<meta name="author" content="comunidad de software libre Basadrinux">
+	<link href="<?php echo URL_APP;?>recursos/img/icono.png" type="image/x-icon" rel="icon" />
+	<link href="<?php echo URL_APP;?>recursos/img/icono.png" type="image/x-icon" rel="shortcut icon" />
 	<link href="<?php echo URL_APP;?>recursos/img/favicon.ico" type="image/x-icon" rel="icon" />
 	<link href="<?php echo URL_APP;?>recursos/img/favicon.ico" type="image/x-icon" rel="shortcut icon" />
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/bootstrap.min.css" />

@@ -2,14 +2,14 @@
 <html lang="en">
   	<head>
 	    <meta charset="utf-8" />
-		<title>Universidad Nacional Jorge Basadre Grohmann</title>
+		<title>Flisol 2013</title>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	    <meta name="robots" content="" />
 	    <meta name="keywords" content="" />
 	    <meta name="description" content="" />
 		<meta name="author" content="" />
-		<link href="recursos/img/favicon.ico" type="image/x-icon" rel="icon" />
-		<link href="recursos/img/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+		<link href="../recursos/img/icono.png" type="image/x-icon" rel="icon" />
+		<link href="../recursos/img/icono.png" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" type="text/css" href="../recursos/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="../recursos/css/estilo.css">
 		<link rel="stylesheet" type="text/css" href="../recursos/css/bootstrap-responsive.min.css" />

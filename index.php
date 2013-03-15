@@ -5,6 +5,8 @@
 <html lang="es-PE">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Festival latinoamericano de instalacion de Software libre 2013 - Flisol tacna">
+	<meta name="author" content="comunidad de software libre Basadrinux">
 	<link href='recursos/img/icono.png' rel='shortcut icon' type='image/gif'/>
 	<link rel="stylesheet" href="recursos/css/web.css">
 	<link href='http://fonts.googleapis.com/css?family=Advent+Pro' rel='stylesheet' type='text/css'>

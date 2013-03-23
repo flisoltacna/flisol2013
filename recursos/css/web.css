@@ -117,22 +117,7 @@ text-decoration: none;
 -webkit-transition: .2s;
 transition: .2s;
 font-family: 'Julius Sans One', sans-serif;
- }/*
-nav li:nth-child(1) a{
-background: url("../imagenes/ico-evento.png") no-repeat center 18px;
-}
-nav li:nth-child(2) a{
-background: url("../imagenes/ico-lugar.png") no-repeat center 18px;
-}
-nav li:nth-child(3) a{
-background: url("../imagenes/ico-cronograma.png") no-repeat center 18px;
-}
-nav li:nth-child(4) a{
-background: url("../imagenes/ico-organizadores.png") no-repeat center 18px;
-}
-nav li:nth-child(5) a{
-background: url("../imagenes/ico-inicio.png") no-repeat center 18px;
-}*/
+ }
 nav li a:hover{
 	background-color:rgba(0, 0, 0, 0.16);
 	color: #fff;

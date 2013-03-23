@@ -141,9 +141,7 @@
 	<div id="info-derecha">
 		<object width="650" height="400"><param name="movie" value="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3" type="application/x-shockwave-flash" width="650" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 	</div>
-
 	</div>
-<!--aqui estab el formulario-->	
 	</div>	
 	</div>
 	<div id="contenedor">
@@ -159,20 +157,19 @@
 			<input type="text" name="fono" size="27" placeholder = "Telefono" required />
 			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
 			<div id="certificado">
-			<label>Certificado: (S/.__.__)</label>
+			<label>Certificado: (S/. 20)</label>
 			<input type="radio" name="number" value="NO" /> No
 			<input type="radio" name="number" value="SI" /> Si
 			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Hacer Inscripción"/>
 		</fieldset>	
-	<!-- RESULTADO--> 
+		<!-- RESULTADO--> 
 			<div id="result"></div>
 		</form>
 		</div>
 	<!-- FIN FORMULARIO-->
 		<div class="cinta"></div>
 		<div id="evento">
-			<!--<img src="imagenes/fotoflisol.png" />-->
 			<?php 
 				$publicacion = @query('SELECT * FROM publicaciones WHERE titulo = "SOBRE FLISOL"');
 			?>
@@ -189,27 +186,6 @@
 					<center>
 					<section>
 						En Proceso ...
-						<!--<form>
-							<label>pregunta numero 1?</label>
-							<select name="respuesta01">    
-       							<option value="Windows" selected="selected" >Windows</option>
-       							<option value="Machintosh">Mac</option>
-       							<option value="Linux">Linux</option>
-   							</select>
-   							<label>pregunta numero 1?</label>
-							<select name="respuesta01">    
-       							<option value="Windows" selected="selected" >Windows</option>
-       							<option value="Machintosh">Mac</option>
-       							<option value="Linux">Linux</option>
-   							</select>
-   							<label>pregunta numero 1?</label>
-							<select name="respuesta01">    
-       							<option value="Windows" selected="selected" >Windows</option>
-       							<option value="Machintosh">Mac</option>
-       							<option value="Linux">Linux</option>
-   							</select>
-
-						</form>-->
 					</section>
 				</center>
 				</div>

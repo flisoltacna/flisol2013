@@ -22,6 +22,9 @@
 						<li><a href="../encuestas">Encuestas</a></li>
 						<li><a href="../../index.php" target="_blank">Ver página</a></li>
 					</ul>
+					<p class="navbar-text pull-right right-menu">
+						<a href="../verificar.php?opcion=logout" class="navbar-link">Cerrar sesión</a>
+					</p>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
@@ -34,7 +37,7 @@
 			</li>
 	    	<li><a href="#">Home</a> <span class="divider">/</span></li>
 	    	<li><a href="../inscriptos">Inscriptos</a> <span class="divider">/</span></li>
-	    	<li class="active">Nueva inscripción</li>
+	    	<li class="active">Editar inscripción</li>
     	</ul>
 
     	<div class="row-fluid">

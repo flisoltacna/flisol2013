@@ -92,9 +92,9 @@
 							<td><?php echo utf8_encode($asignar['grupo_nombre']);?></td>
 							<td>
 								<?php if($asignar['activo']):?>
-									<img src="../recursos/img/tick_circle.png">
+									<img src="../../recursos/img/tick_circle.png">
 								<?php else: ?>
-									<img src="../recursos/img/icon-16-delete.png">
+									<img src="../../recursos/img/icon-16-delete.png">
 								<?php endif;?>
 							</td>
 							<td>

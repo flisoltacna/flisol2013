@@ -3,8 +3,8 @@
 	require_once('../../recursos/funciones.php');
 
 	if(isset($_POST['nombre']) && !empty($_POST['nombre']) && isset($_POST['email']) && !empty($_POST['email'])){
-		$nombre=utf8_decode($_POST["nombre"]);
-		$apellidos=utf8_decode($_POST["apellidos"]);
+		$nombre=strtoupper(utf8_decode($_POST["nombre"]));
+		$apellidos=strtoupper(utf8_decode($_POST["apellidos"]));
 		$dni=$_POST["dni"];
 		$email=$_POST["email"];
 		$fono=$_POST["fono"];

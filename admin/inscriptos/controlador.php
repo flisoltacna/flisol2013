@@ -2,8 +2,8 @@
 	require_once('modelo.php');
 
 	if(isset($_POST['agregar_inscripcion'])){
-		$nombres = utf8_decode($_POST['nombres']);
-		$apellidos = utf8_decode($_POST['apellidos']);
+		$nombres=strtoupper(utf8_decode($_POST["nombres"]));
+		$apellidos=strtoupper(utf8_decode($_POST["apellidos"]));
 		$fecha = fecha_hora();
 		$email = $_POST['email'];
 		$dni = $_POST['dni'];
@@ -26,8 +26,8 @@
 	}
 
 	if(isset($_POST['actualizar_inscripcion'])){
-		$nombres = utf8_decode($_POST['nombres']);
-		$apellidos = utf8_decode($_POST['apellidos']);
+		$nombres=strtoupper(utf8_decode($_POST["nombres"]));
+		$apellidos=strtoupper(utf8_decode($_POST["apellidos"]));
 		$email = $_POST['email'];
 		$dni = $_POST['dni'];
 		$telefono = $_POST['telefono'];

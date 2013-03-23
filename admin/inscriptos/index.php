@@ -83,7 +83,13 @@
 									<td><?php echo $inscripto['id']; ?></td>
 							        <td><?php echo utf8_encode($inscripto['nombres']); ?></td>
 							        <td><?php echo utf8_encode($inscripto['apellidos']); ?></td>
-							        <td><input type="checkbox" name="certificado" disabled="disabled" <?php if($inscripto['certificado']):?> checked <?php endif;?> ></td>
+							        <td>
+							        	<?php if($inscripto['certificado']):?>
+											<a href="#"><img src="../../recursos/img/tick_circle.png"></a> 
+										<?php else: ?>
+											<a href="#"><img src="../../recursos/img/icon-16-delete.png"></a>
+										<?php endif;?>
+							        </td>
 									<td>
 										<?php setlocale(LC_TIME, "spanish");
 											$fecha = strftime(" %d/%m/%y %H:%M:%S ",strtotime($inscripto['fecha_registro']));

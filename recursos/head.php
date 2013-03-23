@@ -15,13 +15,33 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/bootstrap-responsive.min.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="<?php echo URL_APP;?>recursos/js/jquery.dataTables.min.js"></script>
 	<script src="<?php echo URL_APP;?>recursos/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/ckeditor/ckeditor.js"></script>
-	<!--<script src="<?php //echo URL_APP;?>recursos/js/jquery.dataTables.js"></script>
-	<script src="<?php //echo URL_APP;?>recursos/js/script.js"></script>-->
+	<!--<script src="<?php //echo URL_APP;?>recursos/js/script.js"></script>-->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->	
+	<![endif]-->
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#dataTable').dataTable({
+				"sPaginationType": "full_numbers",		
+				"bInfo": false,	
+				"bJQueryUI": true,		
+				"oLanguage": {	"sLengthMenu": "_MENU_",		
+					"sSearch": "",			
+					"sInfo": "Mostrando _START_ de _END_ de _TOTAL_ registros",		
+					"sZeroRecords": "No hay ningún registro",		
+					"oPaginate": {					
+						"sFirst":    "«",			
+						"sPrevious": "←",				
+						"sNext":     "→",				
+						"sLast":     "»"				
+						}		
+					}
+			});
+		});
+	</script>	
 </head>
 <?php 
 	session_start(); 

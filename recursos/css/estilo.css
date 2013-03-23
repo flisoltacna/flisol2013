@@ -109,19 +109,19 @@ div.dataTables_info {
     text-align: right;  
     padding:5px 0;
 }
-table.dataTable{
+table#dataTable{
     margin:0;
 }
-table.dataTable th:active {
+table#dataTable th:active {
     outline: medium none;
 }
-.sort-index, .hidden {
-    left: -10000px;
-    position: absolute;
-    top: -10000px;
-    visibility: hidden;
+#dataTable .ui-state-default{
+    cursor: pointer;
 }
-.dataTables_wrapper .dataTables_paginate span.fg-button{
+.dataTables_wrapper .dataTables_paginate a:hover{
+    text-decoration: none;
+}
+.dataTables_wrapper .dataTables_paginate .fg-button{
     padding: 7px 14px;
     line-height: 34px;
     border: 1px solid #ddd;
@@ -129,7 +129,7 @@ table.dataTable th:active {
     color: #0088cc;
     cursor:pointer;
 }
-.dataTables_wrapper .dataTables_paginate span.first{
+.dataTables_wrapper .dataTables_paginate .first{
     border-left: 1px solid #ddd;
     -webkit-border-top-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
@@ -138,7 +138,7 @@ table.dataTable th:active {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-.dataTables_wrapper .dataTables_paginate span.last{
+.dataTables_wrapper .dataTables_paginate .last{
     border-right: 1px solid #ddd;
     -webkit-border-top-right-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
@@ -147,15 +147,15 @@ table.dataTable th:active {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }
-.dataTables_wrapper .dataTables_paginate span.ui-state-disabled{
+.dataTables_wrapper .dataTables_paginate .ui-state-disabled{
     color: #999999;
     background-color: transparent;
     cursor: default;
 }
-.dataTables_wrapper .dataTables_paginate span span.ui-state-disabled{
-    background-color: #f5f5f5;
-    color: #999999;
-    cursor: default;
+.dataTables_wrapper .dataTables_paginate span .ui-state-disabled{
+    background-color: transparent;
+    color: #0088cc;
+    cursor: pointer;
 }
 /*================= Formulario encuesta ====================*/
 form{

@@ -75,7 +75,7 @@
 					INNER JOIN grupos AS grup ON grup.id = asig.grupo_id WHERE enc.id = $id");
 			?>
 
-			<table class="table table-striped dataTable">
+			<table id="dataTable" class="table table-striped">
 				<thead>
 					<th>#</th>
 					<th>Encuesta</th>

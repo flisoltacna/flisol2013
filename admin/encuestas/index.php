@@ -53,7 +53,7 @@
     			<div class="box">
     				<h4 class="box-header round-top">Gestión de Encuestas</h4>
     				<div class="box-content">
-    					<table class="table table-striped table-bordered">
+    					<table id="dataTable" class="table table-striped table-bordered">
     						<thead>
     							<th>#</th>
     							<th>Titulo</th>

@@ -155,9 +155,9 @@
 		<p>INSCRIPCION<p>
 			<input type="text" name="nombre" size="27" placeholder = "Nombre" autofocus required />
 			<input type="text" name="apellidos" size="27" placeholder = "Apellidos" autofocus required />
-			<input type="text" name="dni" size="27" placeholder = "DNI" required />
-			<input type="text" name="email" size="27" placeholder = "E-mail" required />
-			<input type="text" name="fono" size="27" placeholder = "Telefono" required />
+			<input type="text" name="dni" size="27" placeholder = "DNI" pattern="\d{8}" maxlength="8" required />
+			<input type="email" name="email" size="27" placeholder = "E-mail" required />
+			<input type="text" name="fono" size="27" placeholder = "Telefono" pattern="\+?\d{9,13}" required />
 			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>

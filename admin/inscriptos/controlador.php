@@ -48,15 +48,17 @@
 		}	
 	}
 
-	if(isset($_GET['opcion'])){
-		if($_GET['opcion']=='eliminar'){
-			$id_inscripto=$_GET['id'];
-		
-			if(eliminar_inscripcion($id_inscripto)){
+	if(isset($_POST['opcion'])){
+		if($_POST['opcion']=='eliminar'){
+			$ids=$_POST['id'];
+			$inscriptos = explode(',', $ids);
+			if(!empty($inscriptos)){
+				foreach ($inscriptos as $inscripto) {
+					eliminar_inscripcion($inscripto);
+				}
 				header("location:index.php?mensaje=1");
-			}
-			else{
-				header("location:index.php?mensaje=2");	
+			}else{
+				header("location:index.php?mensaje=2");		
 			}
 		}
 	}

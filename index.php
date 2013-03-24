@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="recursos/js/jquery.countdown.js"></script>
 	<script type="text/javascript" src="recursos/js/jquery.countdown-es.js"></script>
 	
-	<!--Formulario Resultado -->
+	<!--========================Formulario Resultado DESACTIVADO
 	<script language="javascript">
 	$(document).ready(function() {
 	    $().ajaxStart(function() {
@@ -45,7 +45,7 @@
 	return false;
 	}
 	</script>
-	<!--Formulario Resultado fin-->
+	==============================Formulario Resultado fin-->
 
 	<script type="text/javascript">
 	$(function () {
@@ -64,7 +64,8 @@
 
 	        $('#info-derecha').css('display','none');
 	        $('#fondobanner').css('height','200px');
-	        $('#info-izquierda').css('font-size','10px' ).css('width','100%').css('height','auto').css('background','#363535');
+	        $('#info-izquierda').css('font-size','10px' ).css('width','100%').css('height','auto').css('background','#363636');
+	        $('#redsocial').css('display','none');
 
 	        $('#CerrarPreinscripcion').css('display','block');
 	    },
@@ -74,7 +75,8 @@
 
 	        $('#info-derecha').css('display','block');
 	        $('#fondobanner').css('height','630px');
-	        $('#info-izquierda').css('font-size','100%' ).css('width','300px').css('height','400px').css('background','rgba(7, 7, 7, 0.5)');
+	        $('#info-izquierda').css('font-size','100%' ).css('width','300px').css('height','400px').css('background','#363636');
+	        $('#redsocial').css('display','block');
 
 	        $('#CerrarPreinscripcion').css('display','none');
 	    }
@@ -135,6 +137,7 @@
 		<div id="CerrarPreinscripcion" style="display:none;">
 			<a href="javascript:box_actions.close()">Cancelar Inscripcion</a>
 		</div>
+		<div id="redsocial"><a href="https://www.facebook.com/FlisolTacnaPeru?fref=ts" target="_blank"><img src="recursos/img/facebook.png"></a></div>
 	</div>	
 	<!--<div id="info-centro">
 	</div>-->
@@ -158,8 +161,8 @@
 			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
-			<input type="radio" name="number" value="NO" /> No
-			<input type="radio" name="number" value="SI" /> Si
+			<input type="radio" name="certificado" value="NO" checked/> No
+			<input type="radio" name="certificado" value="SI" /> Si
 			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Hacer Inscripción"/>
 		</fieldset>	
@@ -214,13 +217,22 @@
 				<img src="recursos/img/organizadores/_Logo_BasadrinuX.png"/>
 		</div>
 		<div class="cinta3"></div>
-		<div id="auspicios">
-			<h3>Patrocinan</h3>
-			<a href=""><img src="recursos/img/Patrocinan/logo UNJBG Oficial.png"/></a>
-			<a href=""><img src="recursos/img/Patrocinan/eureka.png"/></a>
+		<div id="publicidad">
+				<div id="patrocinan">
+					<h3>Patrocinan</h3>
+					<a href=""><img src="recursos/img/Patrocinan/logo UNJBG Oficial.png"/></a>
+					
+				</div>
+				<div id="auspicios">
+					<h3>Auspucian</h3>
+					<a href=""><img src="recursos/img/Patrocinan/eureka.png"/></a>
+				</div>
 		</div>
 		<footer>
-			<p>( bajo licencia GPL )</p>
+			<img src="recursos/img/pie1.png">
+			<img src="recursos/img/pie2.png">
+			<p>El contenido de la web está bajo la licencia GPL. 
+El código fuente de esta página está disponible en <a href="https://github.com/flisoltacna" target="_blank">GitHub</a> bajo la GNU Public License 3.0.</p>
 		</footer>	
 	</div>
 	<script type="text/javascript">

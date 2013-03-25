@@ -132,7 +132,7 @@
 		<hgroup><h3>CENTRO CULTURAL MUNICIPAL ALTO DE LA ALIANZA</h3></hgroup>
 		
 		<div id="Preinscripcion">
-			<a href="javascript:box_actions.open()">Hacer Inscripcion</a>
+			<a href="javascript:box_actions.open()">Realizar Inscripcion</a>
 		</div>
 		<div id="CerrarPreinscripcion" style="display:none;">
 			<a href="javascript:box_actions.close()">Cancelar Inscripcion</a>
@@ -158,19 +158,36 @@
 		<div id="formulario"> 
 		<form action="admin/inscriptos/registrar.php" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
-		<p>INSCRIPCION<p>
-			<input type="text" name="nombre" size="27" placeholder = "Nombre" autofocus required />
-			<input type="text" name="apellidos" size="27" placeholder = "Apellidos" autofocus required />
-			<input type="text" name="dni" size="27" placeholder = "DNI" pattern="\d{8}" maxlength="8" required />
-			<input type="email" name="email" size="27" placeholder = "E-mail" required />
-			<input type="text" name="fono" size="27" placeholder = "Telefono" pattern="\+?\d{9,13}" required />
-			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
+			<div class="clearfix">
+				<label>Nombres</label>
+				<input type="text" name="nombre" size="27" autofocus required />
+			</div>
+			<div class="clearfix">
+				<label>Apellidos</label>
+				<input type="text" name="apellidos" size="27" autofocus required />
+			</div>
+			<div class="clearfix">
+				<label>DNI</label>
+				<input type="text" name="dni" size="27" pattern="\d{8}" maxlength="8" required />
+			</div>
+			<div class="clearfix">
+				<label>Email</label>
+				<input type="email" name="email" size="27" required />
+			</div>
+			<div class="clearfix">
+				<label>Teléfono</label>
+				<input type="text" name="fono" size="27" pattern="\+?\d{9,13}" required />
+			</div>
+			<div class="clearfix">
+				<label>Organización/C. Estudio/Empresa</label>
+				<input type="text" name="organizacion" size="27" required />
+			</div>
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
 			<input type="radio" name="certificado" value="0" checked/> No
 			<input type="radio" name="certificado" value="1" /> Si
 			</div>
-			<input type="submit" name="mysubmit" id="mysubmit" value="Hacer Inscripción"/>
+			<input type="submit" name="mysubmit" id="mysubmit" value="Realizar Inscripción"/>
 		</fieldset>	
 		<!-- RESULTADO--> 
 			<div id="result"></div>
@@ -223,10 +240,10 @@
 				<img src="recursos/img/organizadores/_Logo_BasadrinuX.png"/>
 		</div>
 		<div class="cinta3"></div>
-		<div id="publicidad">
+		<div class="publicidad">
 				<div id="patrocinan">
 					<h3>Patrocinan</h3>
-					<a href=""><img src="recursos/img/Patrocinan/logo UNJBG Oficial.png"/></a>
+					<a href=""><img src="recursos/img/Patrocinan/logo-UNJBG.png"/></a>
 					
 				</div>
 				<div id="auspicios">

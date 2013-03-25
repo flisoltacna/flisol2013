@@ -152,7 +152,7 @@ padding: 0px 40px 0px 40px;
 	width: 960px;
 	background: transparent;
 	margin-top: 120px;
-	color:#fff;	
+	color:#fff;
 	text-align: center;
 }
 #info-izquierda{
@@ -182,12 +182,20 @@ font-size: 25px;
 }
 #redsocial {
 	background: #252525;
+	padding: 7px;
 }
 #redsocial:hover {
 	background: #DF3333;
 }
+#redsocial span{
+	font-family: 'Julius Sans One',sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
 #redsocial img{
-	width: 200px;
 	cursor: pointer;
 }
 #Preinscripcion, #CerrarPreinscripcion{

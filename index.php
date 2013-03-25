@@ -137,7 +137,13 @@
 		<div id="CerrarPreinscripcion" style="display:none;">
 			<a href="javascript:box_actions.close()">Cancelar Inscripcion</a>
 		</div>
-		<div id="redsocial"><a href="https://www.facebook.com/FlisolTacnaPeru?fref=ts" target="_blank"><img src="recursos/img/facebook.png"></a></div>
+		<div id="redsocial">
+			<span>Síguenos en</span>
+			<a href="https://www.facebook.com/FlisolTacnaPeru" target="_blank"><img src="recursos/img/facebook-icon.png"></a>
+			<a href="https://twitter.com/flisoltacna" target="_blank"><img src="recursos/img/twitter-icon.png"></a>
+			<a href="https://www.youtube.com/user/FlisolTacnaPeru" target="_blank"><img src="recursos/img/youtube-icon.png"></a>
+			<a href="https://plus.google.com/u/0/111966957349242981203" target="_blank"><img src="recursos/img/google-icon.png"></a>
+		</div>
 	</div>	
 	<!--<div id="info-centro">
 	</div>-->
@@ -161,8 +167,8 @@
 			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
-			<input type="radio" name="certificado" value="NO" checked/> No
-			<input type="radio" name="certificado" value="SI" /> Si
+			<input type="radio" name="certificado" value="0" checked/> No
+			<input type="radio" name="certificado" value="1" /> Si
 			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Hacer Inscripción"/>
 		</fieldset>	
@@ -224,7 +230,7 @@
 					
 				</div>
 				<div id="auspicios">
-					<h3>Auspucian</h3>
+					<h3>Auspician</h3>
 					<a href=""><img src="recursos/img/Patrocinan/eureka.png"/></a>
 				</div>
 		</div>

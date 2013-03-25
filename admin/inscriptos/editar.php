@@ -89,6 +89,9 @@
 				    			<label class="checkbox inline">
 									<input type="checkbox" name="certificado" value="1" <?php if($inscripto['certificado']):?> checked <?php endif;?> >Certificado
 								</label>
+								<label class="checkbox inline">
+									<input type="checkbox" name="asistencia" value="1" <?php if($inscripto['asistencia']):?> checked <?php endif;?> >Asistencia
+								</label>
 							</div>
     						<div class="form-actions">
     							<button type="submit" name="actualizar_inscripcion" class="btn btn-success block-menu">

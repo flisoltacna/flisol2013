@@ -100,14 +100,14 @@
 				<div class="control-group">
     				<label for="preguntaformulacion">Formule la pregunta</label>
     				<div class="controls">
-    					<input name="pregunta" class="span8" maxlength="120" type="text" id="preguntaformulacion" required="required" />
+    					<input name="pregunta" class="span8" maxlength="250" type="text" id="preguntaformulacion" required="required" />
     				</div>
     			</div>
     			<div class="control-group">
     				<label>Respuestas</label>
     				<div class="controls">
-    					<input type="text" name="opcion[0]" class="span4" style="margin-bottom: 2px;" maxlength="140" value="Si" required="required"><br/>
-        				<input type="text" name="opcion[1]" class="span4" style="margin-bottom: 2px;" maxlength="140" value="No" required="required"><br/>
+    					<input type="text" name="opcion[0]" class="span8" style="margin-bottom: 2px;" maxlength="300" value="Si" required="required"><br/>
+        				<input type="text" name="opcion[1]" class="span8" style="margin-bottom: 2px;" maxlength="300" value="No" required="required"><br/>
         					<button href="javascript:void(0);" class="btn" id="padd">Añadir respuesta</button>
         			</div>
     			</div>
@@ -136,7 +136,7 @@
             elem.click(function (e) {
                 e.preventDefault();
                 var obj_id = $(this).data('id') + $(this).data('index');
-                var obj_insert = '<div style="diplay:block"><input type="text" required="required" class="span4" style="margin-bottom:2px;" maxlength="140" name="'+ id +'[' + index + ']" id="' + obj_id + '" /><button class="btn btn-danger" style="margin-left: 3px;" onclick="$(\'#padd\').show();$(\'#' + obj_id + '\').remove(); $(this).remove(); return false;"><i class="icon-remove icon-white"></i></button></div>';
+                var obj_insert = '<div style="diplay:block"><input type="text" required="required" class="span8" style="margin-bottom:2px;" maxlength="300" name="'+ id +'[' + index + ']" id="' + obj_id + '" /><button class="btn btn-danger" style="margin-left: 3px;" onclick="$(\'#padd\').show();$(\'#' + obj_id + '\').remove(); $(this).remove(); return false;"><i class="icon-remove icon-white"></i></button></div>';
                 index ++;
                 $(this).data('index', index);
                 elem.before($(obj_insert));

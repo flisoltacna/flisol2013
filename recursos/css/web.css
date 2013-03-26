@@ -508,6 +508,11 @@ font-family: 'Julius Sans One', sans-serif;
 font-size: 20px;
 padding: 5px;border: none;
 }
+
+input[name='nombre'], input[name='apellidos'] {
+	text-transform: uppercase;
+}
+
 /*===================Pie de pagina=======================*/
 footer{
 	width:100%;

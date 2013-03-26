@@ -7,7 +7,6 @@
 		if ($error === false) {
 			exit;
 		}
-		exit(var_dump($error));
 	}
 ?>
 <!DOCTYPE HTML>
@@ -127,26 +126,26 @@
 		<script type="text/javascript" src="recursos/js/scrolltop.js"></script>
 		</header>		
 	</div>
-	<div id="fondobanner">
+	<div id="fondobanner"<?php if (isset($error)) echo ' style="height: 200px"'; ?>>
 	<div id="banner">
 	<div id="titulo">
 		<hgroup><h1>9no Festival Latinoamericano de Instalación de Software Libre- Flisol Peru 2013</h1></hgroup>
 	</div>	
 	<div id="info">
-	<div id="info-izquierda">	
+	<div id="info-izquierda"<?php if (isset($error)) echo ' style="font-size: 10px; width: 100%; height: auto; background: #363636"'; ?>>	
 		<hgroup><h1>Sábado 27 de Abril</h1></hgroup>
 		<hgroup><div class="lema"><h3>
 			"Ahora en Tacna se vive el software libre"
 		</h3></div></hgroup>
 		<hgroup><h3>CENTRO CULTURAL MUNICIPAL ALTO DE LA ALIANZA</h3></hgroup>
 		
-		<div id="Preinscripcion">
+		<div id="Preinscripcion"<?php if (isset($error)) echo ' style="display: none"'; ?>>
 			<a href="javascript:box_actions.open()">Realizar Inscripcion</a>
 		</div>
-		<div id="CerrarPreinscripcion" style="display:none;">
+		<div id="CerrarPreinscripcion" style="<?php if (isset($error)) echo 'display: block'; else echo 'display: none'; ?>">
 			<a href="javascript:box_actions.close()">Cancelar Inscripcion</a>
 		</div>
-		<div id="redsocial">
+		<div id="redsocial"<?php if (isset($error)) echo ' style="display: none"'; ?>>
 			<span>Síguenos en</span>
 			<a href="https://www.facebook.com/FlisolTacnaPeru" target="_blank"><img src="recursos/img/facebook-icon.png"></a>
 			<a href="https://twitter.com/flisoltacna" target="_blank"><img src="recursos/img/twitter-icon.png"></a>
@@ -156,7 +155,7 @@
 	</div>	
 	<!--<div id="info-centro">
 	</div>-->
-	<div id="info-derecha">
+	<div id="info-derecha"<?php if (isset($error)) echo ' style="display: none"'; ?>>
 		<object width="650" height="400"><param name="movie" value="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3" type="application/x-shockwave-flash" width="650" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 	</div>
 	</div>
@@ -164,7 +163,7 @@
 	</div>
 	<div id="contenedor">
 	<!--FORMULARIO-->
-		<div id="formulario"> 
+		<div id="formulario"<?php if (isset($error)) echo ' style="display: block"'; ?>> 
 		<form action="<?php echo URL_APP . "index.php"; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
 			<div class="clearfix">

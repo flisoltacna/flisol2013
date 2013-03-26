@@ -9,10 +9,10 @@
 		$email=$_POST["email"];
 		$fono=$_POST["fono"];
 		$organizacion=$_POST["organizacion"];
-		$certificado=$_POST["certificado"];
+		$certificado=$_POST["certificado"] == 0 ? "NO" : "SI";
 		$fecha = fecha_hora();
 
-		if(consulta("INSERT INTO inscriptos(nombres,apellidos,dni,email,telefono,organizacion,fecha_registro) VALUES('".$nombre."','".$apellidos."',".$dni.",'".$email."',".$fono.", '".$organizacion."','".$fecha."' )")){
+		if(consulta("INSERT INTO inscriptos(nombres, apellidos, dni, email, telefono, organizacion, fecha_registro, certificado) VALUES('".$nombre."', '".$apellidos."', ".$dni.", '".$email."', ".$fono.", '".$organizacion."', '".$fecha."', '". $_POST["certificado"] ."')")){
 			
 		}
 		

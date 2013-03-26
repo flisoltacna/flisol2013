@@ -184,8 +184,8 @@
 			</div>
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
-			<input type="radio" name="certificado" value="0" checked/> No
-			<input type="radio" name="certificado" value="1" /> Si
+			<label><input type="radio" name="certificado" value="1" /> Sí</label>
+			<label><input type="radio" name="certificado" value="0" checked/> No</label>
 			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Realizar Inscripción"/>
 		</fieldset>	

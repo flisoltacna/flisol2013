@@ -1,5 +1,14 @@
 <?php 
 	require_once('config/conexion.php');
+
+	if (isset($_POST["mysubmit"])) {
+		$error = include_once("admin/inscriptos/registrar.php");
+
+		if ($error === false) {
+			exit;
+		}
+		exit(var_dump($error));
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="es-PE">
@@ -156,7 +165,7 @@
 	<div id="contenedor">
 	<!--FORMULARIO-->
 		<div id="formulario"> 
-		<form action="admin/inscriptos/registrar.php" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
+		<form action="<?php echo URL_APP . "index.php"; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
 			<div class="clearfix">
 				<label>Nombres</label>
@@ -184,8 +193,8 @@
 			</div>
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
-			<label><input type="radio" name="certificado" value="1" /> Sí</label>
-			<label><input type="radio" name="certificado" value="0" checked/> No</label>
+			<label><input type="radio" name="certificado" value="SI" /> Sí</label>
+			<label><input type="radio" name="certificado" value="NO" checked/> No</label>
 			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Realizar Inscripción"/>
 		</fieldset>	

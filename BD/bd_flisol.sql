@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-03-2013 a las 06:13:32
--- Versión del servidor: 5.0.96
--- Versión de PHP: 5.2.9
+-- Tiempo de generación: 27-03-2013 a las 20:28:20
+-- Versión del servidor: 5.5.24-log
+-- Versión de PHP: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `flisol13_flisol`
+-- Base de datos: `bd_flisol`
 --
 
 -- --------------------------------------------------------
@@ -27,16 +27,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `asignaciones` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `encuesta_id` int(11) NOT NULL,
   `grupo_id` int(11) NOT NULL,
-  `activo` tinyint(1) default '0',
-  `fecha_inicio` date default NULL,
-  `fecha_finalizacion` date default NULL,
-  PRIMARY KEY  (`id`),
+  `activo` tinyint(1) DEFAULT '0',
+  `fecha_inicio` date DEFAULT NULL,
+  `fecha_finalizacion` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `fk_encuestas_has_encuestados_encuestas1_idx` (`encuesta_id`),
   KEY `fk_asignaciones_grupos1_idx` (`grupo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `asignaciones`
+--
+
+INSERT INTO `asignaciones` (`id`, `encuesta_id`, `grupo_id`, `activo`, `fecha_inicio`, `fecha_finalizacion`) VALUES
+(1, 1, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -45,12 +52,12 @@ CREATE TABLE IF NOT EXISTS `asignaciones` (
 --
 
 CREATE TABLE IF NOT EXISTS `encuestas` (
-  `id` int(11) NOT NULL auto_increment,
-  `encuesta_titulo` varchar(120) default NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `encuesta_titulo` varchar(120) DEFAULT NULL,
   `descripcion` text,
-  `fecha_creacion` varchar(45) default NULL,
+  `fecha_creacion` varchar(45) DEFAULT NULL,
   `usuario_id` int(11) NOT NULL,
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY (`id`),
   KEY `fk_encuestas_usuarios1` (`usuario_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -68,9 +75,9 @@ INSERT INTO `encuestas` (`id`, `encuesta_titulo`, `descripcion`, `fecha_creacion
 --
 
 CREATE TABLE IF NOT EXISTS `grupos` (
-  `id` int(11) NOT NULL auto_increment,
-  `grupo_nombre` varchar(120) default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `grupo_nombre` varchar(120) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -88,18 +95,25 @@ INSERT INTO `grupos` (`id`, `grupo_nombre`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `inscriptos` (
-  `id` int(11) NOT NULL auto_increment,
-  `dni` varchar(8) default NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dni` varchar(8) DEFAULT NULL,
   `nombres` varchar(120) NOT NULL,
   `apellidos` varchar(120) NOT NULL,
-  `email` varchar(200) default NULL,
-  `telefono` varchar(15) default NULL,
-  `organizacion` varchar(225) default NULL,
-  `fecha_registro` datetime default NULL,
-  `certificado` tinyint(1) default NULL COMMENT '0 -> no quiere certificado\n1 -> con certificado',
-  `asistencia` tinyint(1) default NULL COMMENT '0 -> no asistio\n1->asistio al evento',
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `email` varchar(200) DEFAULT NULL,
+  `telefono` varchar(15) DEFAULT NULL,
+  `organizacion` varchar(225) DEFAULT NULL,
+  `fecha_registro` datetime DEFAULT NULL,
+  `certificado` tinyint(1) DEFAULT NULL COMMENT '0 -> no quiere certificado\n1 -> con certificado',
+  `asistencia` tinyint(1) DEFAULT NULL COMMENT '0 -> no asistio\n1->asistio al evento',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `inscriptos`
+--
+
+INSERT INTO `inscriptos` (`id`, `dni`, `nombres`, `apellidos`, `email`, `telefono`, `organizacion`, `fecha_registro`, `certificado`, `asistencia`) VALUES
+(1, '502325', 'ESPERANZA SOLEDAD', 'PAUCAR ARCE', 'solessarce@gmail.com', '952845031', 'educaciÃ³n', '2013-03-27 10:35:39', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -108,106 +122,106 @@ CREATE TABLE IF NOT EXISTS `inscriptos` (
 --
 
 CREATE TABLE IF NOT EXISTS `opciones` (
-  `id` int(11) NOT NULL auto_increment,
-  `opcion_respuesta` varchar(300) default NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `opcion_respuesta` varchar(300) DEFAULT NULL,
   `pregunta_id` int(11) NOT NULL,
-  `votos` int(11) default NULL,
-  PRIMARY KEY  (`id`),
+  `votos` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `fk_opciones_preguntas1_idx` (`pregunta_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=85 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
 
 --
 -- Volcado de datos para la tabla `opciones`
 --
 
-INSERT INTO `opciones` (`opcion_respuesta`, `pregunta_id`, `votos`) VALUES
-('Si, es software sin limitaciones y no necesariamente gratuito.', 1, NULL),
-('Si, es software con limitaciones y siempre gratuito.', 1, NULL),
-('Si, es aquel cuya licencia permite usar el software para cualquier propÃ³sito excepto venderlo.', 1, NULL),
-('No, conozco su existencia pero no sabrÃ­a definirlo.', 1, NULL),
-('No', 1, NULL),
-('No, nunca lo he usado.', 2, NULL),
-('Si, he probado uno o mÃ¡s programas y aun los sigo usando.', 2, NULL),
-('No, probÃ© uno o mÃ¡s programas y los dejÃ© de usar.', 2, NULL),
-('No sabe.', 2, NULL),
-('Si, porque se desarrolla y actualiza constantemente.', 3, NULL),
-('Si, lo he probado y no he tenido problemas con Ã©l.', 3, NULL),
-('No, lo he probado pero he tenido problemas con Ã©l.', 3, NULL),
-('No, porque cualquier programador puede incluir cÃ³digo daÃ±ino.', 3, NULL),
-('No sÃ©, aun no lo he probado.', 3, NULL),
-('Totalmente de acuerdo.', 4, NULL),
-('Bastante de acuerdo.', 4, NULL),
-('De acuerdo.', 4, NULL),
-('Poco de acuerdo.', 4, NULL),
-('Totalmente en desacuerdo.', 4, NULL),
-('No sabe.', 4, NULL),
-('Totalmente de acuerdo.', 5, NULL),
-('Bastante de acuerdo.', 5, NULL),
-('De acuerdo.', 5, NULL),
-('Poco de acuerdo.', 5, NULL),
-('Totalmente en desacuerdo.', 5, NULL),
-('No sabe.', 5, NULL),
-('Totalmente de acuerdo.', 6, NULL),
-('Bastante de acuerdo.', 6, NULL),
-('De acuerdo.', 6, NULL),
-('Poco de acuerdo.', 6, NULL),
-('Totalmente en desacuerdo.', 6, NULL),
-('No sabe.', 6, NULL),
-('Totalmente de acuerdo.', 7, NULL),
-('Bastante de acuerdo.', 7, NULL),
-('De acuerdo.', 7, NULL),
-('Poco de acuerdo.', 7, NULL),
-('Totalmente en desacuerdo.', 7, NULL),
-('No sabe.', 7, NULL),
-('Prefiero los programas gratuitos, me da igual que sean libres o no.', 8, NULL),
-('Prefiero los programas comerciales porque me dan mÃ¡s confianza.', 8, NULL),
-('Prefiero los programas libres por la libertad de uso que te dan.', 8, NULL),
-('Con ninguna de las anteriores.', 8, NULL),
-('Si, si son compatibles.', 9, NULL),
-('No, los programas comerciales me funcionan bien y no deseo cambiarlos.', 9, NULL),
-('Si, solo uso software libre.', 9, NULL),
-('No, los programas comerciales puedo conseguirlos gratis.', 9, NULL),
-('No sabe', 9, NULL),
-('Si, porque el uso de software libre reduce las ventas de programas.', 10, NULL),
-('No, porque cada usuario utiliza uno u otro software segÃºn sus necesidades.', 10, NULL),
-('No, porque el software libre reduce la copia ilegal del comercial.', 10, NULL),
-('Si, porque crea una comunidad de usuarios que promociona su uso frente al software comercial.', 10, NULL),
-('No, porque la existencia del software libre fomenta la competencia y la mejora del software comercial', 10, NULL),
-('No sabe', 10, NULL),
-('Si, la oferta actual es inferior a la demanda.', 11, NULL),
-('No, la oferta actual es adecuada a la demanda.', 11, NULL),
-('No, la oferta actual es superior a la demanda.', 11, NULL),
-('No sabe', 11, NULL),
-('Si, con bastante frecuencia.', 12, NULL),
-('Si, en algunas ocasiones.', 12, NULL),
-('No, no encuentro lo que busco.', 12, NULL),
-('No, no suelo buscar', 12, NULL),
-('No sabe', 12, NULL),
-('Si', 13, NULL),
-('No', 13, NULL),
-('Hombre', 14, NULL),
-('Mujer', 14, NULL),
-('Menos de 15 aÃ±os', 15, NULL),
-('Entre 15 y 24 aÃ±os', 15, NULL),
-('Entre 25 y 35 aÃ±os', 15, NULL),
-('Entre 36 y 50 aÃ±os', 15, NULL),
-('Entre 51 y 65 aÃ±os', 15, NULL),
-('MÃ¡s de 65 aÃ±os', 15, NULL),
-('Windows', 16, NULL),
-('Linux', 16, NULL),
-('Mac OS', 16, NULL),
-('Otro', 16, NULL),
-('Internet Explorer', 17, NULL),
-('Firefox', 17, NULL),
-('Opera', 17, NULL),
-('Safari', 17, NULL),
-('Chrome', 17, NULL),
-('Otro', 17, NULL),
-('Estudiante', 18, NULL),
-('Universitario', 18, NULL),
-('Docente', 18, NULL),
-('Empresario', 18, NULL),
-('Otro', 18, NULL);
+INSERT INTO `opciones` (`id`, `opcion_respuesta`, `pregunta_id`, `votos`) VALUES
+(1, 'Si, es software sin limitaciones y no necesariamente gratuito.', 1, NULL),
+(2, 'Si, es software con limitaciones y siempre gratuito.', 1, NULL),
+(3, 'Si, es aquel cuya licencia permite usar el software para cualquier propÃ³sito excepto venderlo.', 1, NULL),
+(4, 'No, conozco su existencia pero no sabrÃ­a definirlo.', 1, NULL),
+(5, 'No', 1, NULL),
+(6, 'No, nunca lo he usado.', 2, NULL),
+(7, 'Si, he probado uno o mÃ¡s programas y aun los sigo usando.', 2, NULL),
+(8, 'No, probÃ© uno o mÃ¡s programas y los dejÃ© de usar.', 2, NULL),
+(9, 'No sabe.', 2, NULL),
+(10, 'Si, porque se desarrolla y actualiza constantemente.', 3, NULL),
+(11, 'Si, lo he probado y no he tenido problemas con Ã©l.', 3, NULL),
+(12, 'No, lo he probado pero he tenido problemas con Ã©l.', 3, NULL),
+(13, 'No, porque cualquier programador puede incluir cÃ³digo daÃ±ino.', 3, NULL),
+(14, 'No sÃ©, aun no lo he probado.', 3, NULL),
+(15, 'Totalmente de acuerdo.', 4, NULL),
+(16, 'Bastante de acuerdo.', 4, NULL),
+(17, 'De acuerdo.', 4, NULL),
+(18, 'Poco de acuerdo.', 4, NULL),
+(19, 'Totalmente en desacuerdo.', 4, NULL),
+(20, 'No sabe.', 4, NULL),
+(21, 'Totalmente de acuerdo.', 5, NULL),
+(22, 'Bastante de acuerdo.', 5, NULL),
+(23, 'De acuerdo.', 5, NULL),
+(24, 'Poco de acuerdo.', 5, NULL),
+(25, 'Totalmente en desacuerdo.', 5, NULL),
+(26, 'No sabe.', 5, NULL),
+(27, 'Totalmente de acuerdo.', 6, NULL),
+(28, 'Bastante de acuerdo.', 6, NULL),
+(29, 'De acuerdo.', 6, NULL),
+(30, 'Poco de acuerdo.', 6, NULL),
+(31, 'Totalmente en desacuerdo.', 6, NULL),
+(32, 'No sabe.', 6, NULL),
+(33, 'Totalmente de acuerdo.', 7, NULL),
+(34, 'Bastante de acuerdo.', 7, NULL),
+(35, 'De acuerdo.', 7, NULL),
+(36, 'Poco de acuerdo.', 7, NULL),
+(37, 'Totalmente en desacuerdo.', 7, NULL),
+(38, 'No sabe.', 7, NULL),
+(39, 'Prefiero los programas gratuitos, me da igual que sean libres o no.', 8, NULL),
+(40, 'Prefiero los programas comerciales porque me dan mÃ¡s confianza.', 8, NULL),
+(41, 'Prefiero los programas libres por la libertad de uso que te dan.', 8, NULL),
+(42, 'Con ninguna de las anteriores.', 8, NULL),
+(43, 'Si, si son compatibles.', 9, NULL),
+(44, 'No, los programas comerciales me funcionan bien y no deseo cambiarlos.', 9, NULL),
+(45, 'Si, solo uso software libre.', 9, NULL),
+(46, 'No, los programas comerciales puedo conseguirlos gratis.', 9, NULL),
+(47, 'No sabe', 9, NULL),
+(48, 'Si, porque el uso de software libre reduce las ventas de programas.', 10, NULL),
+(49, 'No, porque cada usuario utiliza uno u otro software segÃºn sus necesidades.', 10, NULL),
+(50, 'No, porque el software libre reduce la copia ilegal del comercial.', 10, NULL),
+(51, 'Si, porque crea una comunidad de usuarios que promociona su uso frente al software comercial.', 10, NULL),
+(52, 'No, porque la existencia del software libre fomenta la competencia y la mejora del software comercial', 10, NULL),
+(53, 'No sabe', 10, NULL),
+(54, 'Si, la oferta actual es inferior a la demanda.', 11, NULL),
+(55, 'No, la oferta actual es adecuada a la demanda.', 11, NULL),
+(56, 'No, la oferta actual es superior a la demanda.', 11, NULL),
+(57, 'No sabe', 11, NULL),
+(58, 'Si, con bastante frecuencia.', 12, NULL),
+(59, 'Si, en algunas ocasiones.', 12, NULL),
+(60, 'No, no encuentro lo que busco.', 12, NULL),
+(61, 'No, no suelo buscar', 12, NULL),
+(62, 'No sabe', 12, NULL),
+(63, 'Si', 13, NULL),
+(64, 'No', 13, NULL),
+(65, 'Hombre', 14, NULL),
+(66, 'Mujer', 14, NULL),
+(67, 'Menos de 15 aÃ±os', 15, NULL),
+(68, 'Entre 15 y 24 aÃ±os', 15, NULL),
+(69, 'Entre 25 y 35 aÃ±os', 15, NULL),
+(70, 'Entre 36 y 50 aÃ±os', 15, NULL),
+(71, 'Entre 51 y 65 aÃ±os', 15, NULL),
+(72, 'MÃ¡s de 65 aÃ±os', 15, NULL),
+(73, 'Windows', 16, NULL),
+(74, 'Linux', 16, NULL),
+(75, 'Mac OS', 16, NULL),
+(76, 'Otro', 16, NULL),
+(77, 'Internet Explorer', 17, NULL),
+(78, 'Firefox', 17, NULL),
+(79, 'Opera', 17, NULL),
+(80, 'Safari', 17, NULL),
+(81, 'Chrome', 17, NULL),
+(82, 'Otro', 17, NULL),
+(83, 'Estudiante', 18, NULL),
+(84, 'Universitario', 18, NULL),
+(85, 'Docente', 18, NULL),
+(86, 'Empresario', 18, NULL),
+(87, 'Otro', 18, NULL);
 
 -- --------------------------------------------------------
 
@@ -216,11 +230,11 @@ INSERT INTO `opciones` (`opcion_respuesta`, `pregunta_id`, `votos`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `preguntas` (
-  `id` int(11) NOT NULL auto_increment,
-  `formulacion_pregunta` varchar(250) default NULL,
-  `obligatoria` tinyint(1) default NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `formulacion_pregunta` varchar(250) DEFAULT NULL,
+  `obligatoria` tinyint(1) DEFAULT NULL,
   `encuesta_id` int(11) NOT NULL,
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY (`id`),
   KEY `fk_preguntas_encuestas_idx` (`encuesta_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
@@ -255,15 +269,15 @@ INSERT INTO `preguntas` (`id`, `formulacion_pregunta`, `obligatoria`, `encuesta_
 --
 
 CREATE TABLE IF NOT EXISTS `publicaciones` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(120) NOT NULL,
   `descripcion` text,
-  `imagen_portada` varchar(120) default NULL,
-  `fecha_registro` datetime default NULL,
-  `fecha_edicion` datetime default NULL,
-  `etiquetas` varchar(225) default NULL,
+  `imagen_portada` varchar(120) DEFAULT NULL,
+  `fecha_registro` datetime DEFAULT NULL,
+  `fecha_edicion` datetime DEFAULT NULL,
+  `etiquetas` varchar(225) DEFAULT NULL,
   `usuario_id` int(11) NOT NULL,
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY (`id`),
   KEY `fk_publicaciones_usuarios1` (`usuario_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -281,11 +295,11 @@ INSERT INTO `publicaciones` (`id`, `titulo`, `descripcion`, `imagen_portada`, `f
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) NOT NULL auto_increment,
-  `username` varchar(45) default NULL,
-  `password` varchar(45) default NULL,
-  `email` varchar(120) default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `email` varchar(120) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
@@ -303,8 +317,8 @@ INSERT INTO `usuarios` (`id`, `username`, `password`, `email`) VALUES
 -- Filtros para la tabla `asignaciones`
 --
 ALTER TABLE `asignaciones`
-  ADD CONSTRAINT `fk_encuestas_has_encuestados_encuestas1` FOREIGN KEY (`encuesta_id`) REFERENCES `encuestas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_asignaciones_grupos1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_asignaciones_grupos1` FOREIGN KEY (`grupo_id`) REFERENCES `grupos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_encuestas_has_encuestados_encuestas1` FOREIGN KEY (`encuesta_id`) REFERENCES `encuestas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `encuestas`

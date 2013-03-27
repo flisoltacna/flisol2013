@@ -12,19 +12,29 @@
 	<link href="<?php echo URL_APP;?>recursos/img/icono.png' rel='shortcut icon" type='image/gif'/>
 	<link rel="stylesheet" href="<?php echo URL_APP;?>recursos/css/encuesta.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/jquery.validation.functions.js"></script>	
 </head>
 <body>
 <?php 
 	$preguntas = @query_data("SELECT * FROM preguntas WHERE encuesta_id=1");
 ?>
-	<form action="online.php" class="validar_form" method="post" id="EncuestaOnline">
+	<form action="online.php" method="post" id="EncuestaOnline">
 		<div id="quickyform" class="" style="display: block;">
 			<div class="wrapper">
 				<?php if(!empty($preguntas)){ ?>
 					<ul id="questions" style="margin-top: 100px; margin-bottom: 20px;">
 						<?php $i=0;?>
 						<?php foreach ($preguntas as $pregunta) {?>
-							<li class="list required open">
+
+							<li id="validar<?php echo $pregunta['id'] ?>" class="list open">
+								<script type="text/javascript">
+						            jQuery(function(){
+						                jQuery('#validar<?php echo $pregunta['id'] ?>').validate({
+						                    expression: "if (isChecked(SelfID)) return true; else return false;",
+						                });
+						            });
+								</script>
 								<div class="item">
 									<?php echo $i+1; ?>
 									<div class="arrow">
@@ -50,7 +60,6 @@
 												</li>
 											<?php };?>
 										<?php };?>
-										<div class="error"></div>				
 										</ul>
 									</div>
 								</div>
@@ -64,15 +73,5 @@
 			<button type="submit" name="votar" class="btn btn-success">Enviar</button>
 		</div>
 	</form>
-
-	<script type="text/javascript">
-		$(".validar_form").submit( function(){
-        var radio = $("input[type='radio']:checked").length;
-            if(radio == ""){
-                $('.error').text("Seleccione una opción");
-                return false;
-            }  
-    	});
-	</script>
 </body>
 </html>

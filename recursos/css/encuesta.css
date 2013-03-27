@@ -157,7 +157,7 @@ ol, ul {
     display: block;
 }
 #quickyform #questions > li .content {
-    padding: 18px 55px 0;
+    padding: 18px 55px 25px;
     position: relative;
 }
 #quickyform #questions > li .content .description {
@@ -176,23 +176,25 @@ ol, ul {
 .question {
     -moz-user-select: text;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 22px;
     color: #BD2B2B;
     line-height: 140%;
     margin: 65px 20px 0 55px;
     padding: 0;
     position: relative;
     text-align: left;
+    display: inline;
 }
 .item {
-    font-size: 16px;
-    line-height: 35px;
-    margin-right: 30px;
-    padding: 0;
-    position: absolute;
-    text-align: right;
-    width: 20px;
-    color: #BD2B2B;
+  font-size: 22px;
+  line-height: 35px;
+  margin-right: 30px;
+  padding: 0;
+  position: absolute;
+  text-align: right;
+  width: 20px;
+  color: #BD2B2B;
+  display: inline;
 }
 .item .arrow {
     height: 4px;
@@ -279,77 +281,12 @@ label, select, button, input[type="button"], input[type="reset"], input[type="su
   line-height:normal;
   text-align:center;
 } 
-
-/*====================================Alertas=====================================*/
-.alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-}
-
-.alert,
-.alert h4 {
-  color: #c09853;
-}
-
-.alert h4 {
-  margin: 0;
-}
-
-.alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: 20px;
-}
-
-.alert-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
-
-.alert-success h4 {
-  color: #468847;
-}
-
-.alert-danger,
-.alert-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
-}
-
-.alert-danger h4,
-.alert-error h4 {
-  color: #b94a48;
-}
-
-.alert-info {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-
-.alert-info h4 {
-  color: #3a87ad;
-}
-
-.alert-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-.alert-block > p,
-.alert-block > ul {
-  margin-bottom: 0;
-}
-
-.alert-block p + p {
-  margin-top: 5px;
+/*==========================Validacion encuesta ====================*/
+.ErrorField {
+  border: 1px solid #D00;
+  color: #D00;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin:10px 0;
+  padding: 3px 4px;
 }

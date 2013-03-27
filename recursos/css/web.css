@@ -40,6 +40,7 @@ font-size: 20px;
 h3{
 	font-family: 'Julius Sans One', sans-serif;
 	font-weight: normal;
+	font-size: 23px;
 }
 h2{
 	text-align: center;
@@ -419,14 +420,14 @@ float: right;display: inline-block;
 -o-transition-duration: 0.5s;
 }
 #lugar, #cronograma{
-	width:50%;
+	width:100%;
 	height: auto;
 	float: left;
 	text-align: center;
 	background: #fff;
 }
-#lugar iframe{
-	border:10px solid #F0F0F0;
+#lugar iframe,#lugar img{
+	border:10px solid #E4E4E4;
 	border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -435,6 +436,9 @@ float: right;display: inline-block;
 }
 #lugar p{
 	font-family: 'Advent Pro', sans-serif;
+}
+#lugar img{
+	width: 335px;
 }
 #cronograma img{
 	width: 95%;

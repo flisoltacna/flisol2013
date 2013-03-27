@@ -10,7 +10,7 @@
 	}
 ?>
 <!DOCTYPE HTML>
-<html lang="es-PE">
+<html lang="es-Es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="Festival latinoamericano de instalacion de Software libre 2013 - Flisol tacna">
@@ -167,7 +167,7 @@
 		<form action="<?php echo URL_APP . "index.php"; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
 			<div class="clearfix">
-				<label>Nombres</label>
+	fE			<label>Nombres</label>
 				<input type="text" name="nombre" size="27" autofocus required />
 			</div>
 			<div class="clearfix">
@@ -217,11 +217,9 @@
 			<div id="masdatos">
 				<div id="masdatos01">
 					<h3>Encuesta</h3>
-					<center>
-					<section>
-						En Proceso ...
-					</section>
-				</center>
+					<div id="Preinscripcion">
+						<a href="admin/encuestas/iniciar.php">Llenar Encuesta</a>
+					</div>
 				</div>
 				<div id="masdatos02">
 					<h3>Flisol 2012</h3>
@@ -262,8 +260,10 @@
 		<footer>
 			<img src="recursos/img/pie1.png">
 			<img src="recursos/img/pie2.png">
-			<p>El contenido de la web está bajo la licencia GPL. 
-El código fuente de esta página está disponible en <a href="https://github.com/flisoltacna" target="_blank">GitHub</a> bajo la GNU Public License 3.0.</p>
+			<p>
+				El contenido de la web está bajo la licencia GPL. 
+				El código fuente de esta página está disponible en <a href="https://github.com/flisoltacna" target="_blank">GitHub</a> bajo la GNU Public License 3.0.
+			</p>
 		</footer>	
 	</div>
 	<script type="text/javascript">

@@ -7,8 +7,6 @@
 	head();
 	menu("publicaciones");
 ?>
-	
-
 	<div class="container">		
 		<ul class="breadcrumb">
 			<li><a href="#"><i class="icon-home"></i></a><span class="divider">/</span>

@@ -13,6 +13,28 @@
 		}
 	}
 
+	if(isset($_POST['votar'])){
+		$opciones = $_POST['opcion'];
+
+		foreach ($opciones as $opcion) {
+			$votos = query("SELECT * FROM opciones WHERE id ='".$opcion."'");
+			$valor = $votos['votos'] + 1;
+			if(votar_opcion($opcion,$valor)){
+				$cen=1;
+			}
+			else{
+				$cen=0;
+			}
+		}
+
+		if($cen){
+			header("location:finalizar.php");
+		}
+		else{
+			
+		}
+	}
+
 	if(isset($_POST['btn-addpregunta'])){
 		$pregunta = utf8_decode($_POST['pregunta']);
 		$encuesta =  $_POST['id_encuesta'];

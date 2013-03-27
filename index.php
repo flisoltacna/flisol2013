@@ -167,7 +167,7 @@
 		<form action="<?php echo URL_APP . "index.php"; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
 			<div class="clearfix">
-	fE			<label>Nombres</label>
+				<label>Nombres</label>
 				<input type="text" name="nombre" size="27" autofocus required />
 			</div>
 			<div class="clearfix">

@@ -401,10 +401,10 @@ float: right;display: inline-block;
 	-o-border-radius: 5px;
 }
 #masdatos02{
-width: 100%;
+	width: 100%;
 	height: auto;
 	background: transparent;
-
+	margin-top: 30px;
 }
 #masdatos02 img{
 	width: 228px;

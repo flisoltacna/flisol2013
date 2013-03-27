@@ -3,34 +3,10 @@
 	require_once('../../recursos/includes.php');
 	require_once('controlador.php'); 
 ?>
-<?php head();?>
-	<!-- menu -->
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="#">Flisol 2013</a>
-				<div class="nav-collapse">
-					<ul class="nav">
-						<li><a href="#">Home</a></li>
-						<li><a href="../publicaciones">Publicaciones</a></li>
-						<li><a href="../inscriptos">Inscriptos</a></li>
-						<li class="active"><a href="../encuestas">Encuestas</a></li>
-						<li><a href="../../index.php" target="_blank">Ver página</a></li>
-					</ul>
-					<p class="navbar-text pull-right right-menu">
-						<a href="../verificar.php?opcion=logout" class="navbar-link">Cerrar sesión</a>
-					</p>
-				</div><!--/.nav-collapse -->
-			</div>
-		</div>
-	</div>
-	<!-- Fin menu -->
-
+<?php 
+	head();
+	menu("encuestas");
+?>
 	<div class="container">		
 		<ul class="breadcrumb">
 			<li><a href="#"><i class="icon-home"></i></a><span class="divider">/</span>
@@ -100,14 +76,14 @@
 				<div class="control-group">
     				<label for="preguntaformulacion">Formule la pregunta</label>
     				<div class="controls">
-    					<input name="pregunta" class="span8" maxlength="120" type="text" id="preguntaformulacion" required="required" />
+    					<input name="pregunta" class="span8" maxlength="250" type="text" id="preguntaformulacion" required="required" />
     				</div>
     			</div>
     			<div class="control-group">
     				<label>Respuestas</label>
     				<div class="controls">
-    					<input type="text" name="opcion[0]" class="span4" style="margin-bottom: 2px;" maxlength="140" value="Si" required="required"><br/>
-        				<input type="text" name="opcion[1]" class="span4" style="margin-bottom: 2px;" maxlength="140" value="No" required="required"><br/>
+    					<input type="text" name="opcion[0]" class="span8" style="margin-bottom: 2px;" maxlength="300" value="Si" required="required"><br/>
+        				<input type="text" name="opcion[1]" class="span8" style="margin-bottom: 2px;" maxlength="300" value="No" required="required"><br/>
         					<button href="javascript:void(0);" class="btn" id="padd">Añadir respuesta</button>
         			</div>
     			</div>
@@ -136,7 +112,7 @@
             elem.click(function (e) {
                 e.preventDefault();
                 var obj_id = $(this).data('id') + $(this).data('index');
-                var obj_insert = '<div style="diplay:block"><input type="text" required="required" class="span4" style="margin-bottom:2px;" maxlength="140" name="'+ id +'[' + index + ']" id="' + obj_id + '" /><button class="btn btn-danger" style="margin-left: 3px;" onclick="$(\'#padd\').show();$(\'#' + obj_id + '\').remove(); $(this).remove(); return false;"><i class="icon-remove icon-white"></i></button></div>';
+                var obj_insert = '<div style="diplay:block"><input type="text" required="required" class="span8" style="margin-bottom:2px;" maxlength="300" name="'+ id +'[' + index + ']" id="' + obj_id + '" /><button class="btn btn-danger" style="margin-left: 3px;" onclick="$(\'#padd\').show();$(\'#' + obj_id + '\').remove(); $(this).remove(); return false;"><i class="icon-remove icon-white"></i></button></div>';
                 index ++;
                 $(this).data('index', index);
                 elem.before($(obj_insert));

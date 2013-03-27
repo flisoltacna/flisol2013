@@ -47,6 +47,7 @@
     						<th><input type="checkbox" id="seleccionados"/></th>
     						<th>#</th>
     						<th>Nombres y Apellidos</th>
+    						<th>Asistencia</th>
     						<th>Email</th>
     						<th>Teléfono</th>
     						<th>Fecha de registro</th>
@@ -64,6 +65,13 @@
 									<span class="label label-success pull-right">Con certificado</span>
 								<?php else: ?>
 									<span class="label label-important pull-right">Sin certificado</span>
+								<?php endif;?>
+							</td>
+							<td>								
+								<?php if($inscripto['asistencia']):?>
+									<a href="#"><img src="../../recursos/img/tick.png"></a>
+								<?php else: ?>
+									<a href="#"><img src="../../recursos/img/delete.png"></a>
 								<?php endif;?>
 							</td>
 							<td><?php echo utf8_encode($inscripto['email']); ?></td>

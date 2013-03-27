@@ -13,7 +13,6 @@ function desconectar(){
 function consulta($consulta){
 	conectar();
 	return mysql_query($consulta);
-	desconectar();
 }
 function query_data($consulta){
 	conectar();
@@ -22,7 +21,6 @@ function query_data($consulta){
 		$tuplas[]=$tupla;
 	endwhile;
 	return($tuplas);
-	desconectar();
 }
 
 function query($consulta){
@@ -30,6 +28,5 @@ function query($consulta){
 	$data=mysql_query($consulta);
 	$tupla=mysql_fetch_array($data);
 	return($tupla);
-	desconectar();
 }
 ?>

@@ -144,7 +144,7 @@ font-family: 'Julius Sans One', sans-serif;
 font-weight: normal;
 text-shadow:0px 0px 10px #fff;
 font-size: 30px;
-padding: 0px 10px 0px 10px;
+padding: 0px 40px 0px 40px;
 }
 
 #info{
@@ -152,7 +152,7 @@ padding: 0px 10px 0px 10px;
 	width: 960px;
 	background: transparent;
 	margin-top: 120px;
-	color:#fff;	
+	color:#fff;
 	text-align: center;
 }
 #info-izquierda{
@@ -160,10 +160,12 @@ padding: 0px 10px 0px 10px;
 	height: 400px;
 	background: #363636;
 	display: inline-block;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-o-border-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;	
 }
 #info-derecha{
 width: 650px;
@@ -176,18 +178,25 @@ float: right;
 	font-family: 'Advent Pro', sans-serif;
 }
 .lema h3{
-color: #FFE20A;
-font-size: 25px;
-font-size: 25px;
+	color: #FFE20A;
+	font-size: 25px;
 }
 #redsocial {
 	background: #252525;
+	padding: 7px;
 }
 #redsocial:hover {
 	background: #DF3333;
 }
+#redsocial span{
+	font-family: 'Julius Sans One',sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
 #redsocial img{
-	width: 200px;
 	cursor: pointer;
 }
 #Preinscripcion, #CerrarPreinscripcion{
@@ -244,17 +253,17 @@ font-size: 25px;
 fieldset{
 	border:none;
 	border-bottom:1px dashed #B87D25;
-	margin: 0px;
-padding: 0px;
+	margin-top: 15px;
+	padding: 0px;
+	text-align: center;
 }
 #formulario{
 	width: 100%;
 	height: auto;
 	background: #FF8A1F;
 	float: right;
-	margin: 120px 0px 0px 5px;
+	margin: 120px 0 0 5px;
 	display: none;
-	text-align: center;
 	font-family: 'Julius Sans One', sans-serif;
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
 	-webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.38);
@@ -267,14 +276,20 @@ padding: 0px;
 	font-size: 20px;
 	margin: 15px 0px;
 }
-input{
-	color:#6F6F6F;
+.clearfix{
+	font-family: 'Advent Pro', sans-serif;
+	color:#585858;
 	font-size:20px;
-	display: inline;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.clearfix label{
+	display: block;
+	text-align: left;
+}
+.clearfix input{
 	width: 280px;
 	height: 23px;
-	margin: 5px;
-	font-family: 'Advent Pro', sans-serif;
 	border:3px solid #A0A0A0;
 	border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -282,14 +297,24 @@ input{
 	-o-border-radius: 6px;
 	-ms-border-radius: 6px;
 }
+.clearfix input[type="text"]:focus,.clearfix input[type="email"]:focus{
+	border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
 #mysubmit{
 	background:#3D3D3D;
 	width: 200px;
 	height: 40px;
-	padding: 5px;
-	
+	margin-bottom: 5px;
 	border: 5px solid #c3c3c3;
 	color:#fff;
+	font-family: 'Advent Pro', sans-serif;
+	font-size:20px;
 }
 #mysubmit:hover{
 	background:#CF3131;
@@ -376,10 +401,10 @@ float: right;display: inline-block;
 	-o-border-radius: 5px;
 }
 #masdatos02{
-width: 100%;
+	width: 100%;
 	height: auto;
 	background: transparent;
-
+	margin-top: 30px;
 }
 #masdatos02 img{
 	width: 228px;
@@ -393,15 +418,20 @@ width: 100%;
 -moz-transition-duration: 0.5s;
 -o-transition-duration: 0.5s;
 }
+#datosevento{
+	width: 960px;
+	height: auto;
+	display: inline-block;
+}
 #lugar, #cronograma{
-	width:50%;
+	width:100%;
 	height: auto;
 	float: left;
 	text-align: center;
 	background: #fff;
 }
-#lugar iframe{
-	border:10px solid #F0F0F0;
+#lugar iframe,#lugar img{
+	border:10px solid #E4E4E4;
 	border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -411,14 +441,17 @@ width: 100%;
 #lugar p{
 	font-family: 'Advent Pro', sans-serif;
 }
+#lugar img{
+	width: 335px;
+}
 #cronograma img{
 	width: 95%;
 }
-#publicidad{
-	width: 100%;
-	background: #fff;
-	height: auto;
-display: inline-block;
+.publicidad{
+width: 100%;
+background: #fff;
+height: auto;
+display: inline-block !important;
 }
 #organizadores{
 	width: 100%;
@@ -443,10 +476,10 @@ display: inline-block;
 	float: left;
 }
 #patrocinan img{
-	width: 40%;
+	width: 35%;
 }
 #auspicios img{
-	width: 25%;
+	width: 30%;
 }
 #patrocinan img , #auspicios img{
 	display: inline-block;
@@ -483,6 +516,11 @@ font-family: 'Julius Sans One', sans-serif;
 font-size: 20px;
 padding: 5px;border: none;
 }
+
+input[name='nombre'], input[name='apellidos'] {
+	text-transform: uppercase;
+}
+
 /*===================Pie de pagina=======================*/
 footer{
 	width:100%;

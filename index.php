@@ -1,8 +1,16 @@
 <?php 
 	require_once('config/conexion.php');
+
+	if (isset($_POST["mysubmit"])) {
+		$error = include_once("admin/inscriptos/registrar.php");
+
+		if ($error === false) {
+			exit;
+		}
+	}
 ?>
 <!DOCTYPE HTML>
-<html lang="es-PE">
+<html lang="es-Es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="Festival latinoamericano de instalacion de Software libre 2013 - Flisol tacna">
@@ -118,30 +126,36 @@
 		<script type="text/javascript" src="recursos/js/scrolltop.js"></script>
 		</header>		
 	</div>
-	<div id="fondobanner">
+	<div id="fondobanner"<?php if (isset($error)) echo ' style="height: 200px"'; ?>>
 	<div id="banner">
 	<div id="titulo">
 		<hgroup><h1>9no Festival Latinoamericano de Instalación de Software Libre- Flisol Peru 2013</h1></hgroup>
 	</div>	
 	<div id="info">
-	<div id="info-izquierda">	
+	<div id="info-izquierda"<?php if (isset($error)) echo ' style="font-size: 10px; width: 100%; height: auto; background: #363636"'; ?>>	
 		<hgroup><h1>Sábado 27 de Abril</h1></hgroup>
 		<hgroup><div class="lema"><h3>
 			"Ahora en Tacna se vive el software libre"
 		</h3></div></hgroup>
 		<hgroup><h3>CENTRO CULTURAL MUNICIPAL ALTO DE LA ALIANZA</h3></hgroup>
 		
-		<div id="Preinscripcion">
-			<a href="javascript:box_actions.open()">Hacer Inscripcion</a>
+		<div id="Preinscripcion"<?php if (isset($error)) echo ' style="display: none"'; ?>>
+			<a href="javascript:box_actions.open()">Realizar Inscripcion</a>
 		</div>
-		<div id="CerrarPreinscripcion" style="display:none;">
+		<div id="CerrarPreinscripcion" style="<?php if (isset($error)) echo 'display: block'; else echo 'display: none'; ?>">
 			<a href="javascript:box_actions.close()">Cancelar Inscripcion</a>
 		</div>
-		<div id="redsocial"><a href="https://www.facebook.com/FlisolTacnaPeru?fref=ts" target="_blank"><img src="recursos/img/facebook.png"></a></div>
+		<div id="redsocial"<?php if (isset($error)) echo ' style="display: none"'; ?>>
+			<span>Síguenos en</span>
+			<a href="https://www.facebook.com/FlisolTacnaPeru" target="_blank"><img src="recursos/img/facebook-icon.png"></a>
+			<a href="https://twitter.com/flisoltacna" target="_blank"><img src="recursos/img/twitter-icon.png"></a>
+			<a href="https://www.youtube.com/user/FlisolTacnaPeru" target="_blank"><img src="recursos/img/youtube-icon.png"></a>
+			<a href="https://plus.google.com/u/0/111966957349242981203" target="_blank"><img src="recursos/img/google-icon.png"></a>
+		</div>
 	</div>	
 	<!--<div id="info-centro">
 	</div>-->
-	<div id="info-derecha">
+	<div id="info-derecha"<?php if (isset($error)) echo ' style="display: none"'; ?>>
 		<object width="650" height="400"><param name="movie" value="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3" type="application/x-shockwave-flash" width="650" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 	</div>
 	</div>
@@ -149,22 +163,39 @@
 	</div>
 	<div id="contenedor">
 	<!--FORMULARIO-->
-		<div id="formulario"> 
-		<form action="admin/inscriptos/registrar.php" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
+		<div id="formulario"<?php if (isset($error)) echo ' style="display: block"'; ?>> 
+		<form action="<?php echo URL_APP; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
-		<p>INSCRIPCION<p>
-			<input type="text" name="nombre" size="27" placeholder = "Nombre" autofocus required />
-			<input type="text" name="apellidos" size="27" placeholder = "Apellidos" autofocus required />
-			<input type="text" name="dni" size="27" placeholder = "DNI" required />
-			<input type="text" name="email" size="27" placeholder = "E-mail" required />
-			<input type="text" name="fono" size="27" placeholder = "Telefono" required />
-			<input type="text" name="organizacion" size="27" placeholder = "Organizacion/C. Estudio/Empresa" required />
+			<div class="clearfix">
+				<label>Nombres</label>
+				<input type="text" name="nombre" size="27" autofocus required value="<?php if (isset($_POST["nombre"])) echo $_POST["nombre"]; ?>" />
+			</div>
+			<div class="clearfix">
+				<label>Apellidos</label>
+				<input type="text" name="apellidos" size="27" autofocus required value="<?php if (isset($_POST["apellidos"])) echo $_POST["apellidos"]; ?>" />
+			</div>
+			<div class="clearfix">
+				<label>DNI</label>
+				<input type="text" name="dni" size="27" pattern="\d{8}" maxlength="8" required value="<?php if (isset($_POST["dni"])) echo $_POST["dni"]; ?>" />
+			</div>
+			<div class="clearfix">
+				<label>Email</label>
+				<input type="email" name="email" size="27" required value="<?php if (isset($_POST["email"])) echo $_POST["email"]; ?>" />
+			</div>
+			<div class="clearfix">
+				<label>Teléfono</label>
+				<input type="text" name="fono" size="27" pattern="\+?\d{9,13}" required value="<?php if (isset($_POST["fono"])) echo $_POST["fono"]; ?>" />
+			</div>
+			<div class="clearfix">
+				<label>Organización/C. Estudio/Empresa</label>
+				<input type="text" name="organizacion" size="27" required value="<?php if (isset($_POST["organizacion"])) echo $_POST["organizacion"]; ?>" />
+			</div>
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
-			<input type="radio" name="certificado" value="NO" checked/> No
-			<input type="radio" name="certificado" value="SI" /> Si
+			<label><input type="radio" name="certificado" value="SI" <?php if (isset($_POST["certificado"]) and $_POST["certificado"] == "SI") echo "checked "; ?>/> Sí</label>
+			<label><input type="radio" name="certificado" value="NO" <?php if (isset($_POST["certificado"]) and $_POST["certificado"] == "SI") echo " "; else echo "checked "; ?>/> No</label>
 			</div>
-			<input type="submit" name="mysubmit" id="mysubmit" value="Hacer Inscripción"/>
+			<input type="submit" name="mysubmit" id="mysubmit" value="Realizar Inscripción"/>
 		</fieldset>	
 		<!-- RESULTADO--> 
 			<div id="result"></div>
@@ -186,11 +217,9 @@
 			<div id="masdatos">
 				<div id="masdatos01">
 					<h3>Encuesta</h3>
-					<center>
-					<section>
-						En Proceso ...
-					</section>
-				</center>
+					<div id="Preinscripcion">
+						<a href="admin/encuestas/iniciar.php" target="_blank">Llenar Encuesta</a>
+					</div>
 				</div>
 				<div id="masdatos02">
 					<h3>Flisol 2012</h3>
@@ -202,37 +231,42 @@
 		</div>
 		
 		<div class="cinta2"></div>
+<div id="datosevento">
 			<div id="lugar">
 				<h3>Lugar</h3>
 				<p>El Evento se Desarrolllará en el CENTRO CULTURAL MUNICIPAL ALTO DE LA ALIANZA el Sábado 27 de Abril desde las 9 am hasta las 8 pm
-</p>
-		<iframe width="425" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.pe/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=centro+cultural+tacna+vigil&amp;aq=&amp;sll=-17.993986,-70.244476&amp;sspn=0.001472,0.002642&amp;t=m&amp;ie=UTF8&amp;hq=centro+cultural&amp;hnear=Vigil,+Tacna&amp;ll=-17.993826,-70.244533&amp;spn=0.003571,0.00456&amp;z=17&amp;output=embed"></iframe>
+				</p>
+		<iframe width="535" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.pe/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=centro+cultural+tacna+vigil&amp;aq=&amp;sll=-17.993986,-70.244476&amp;sspn=0.001472,0.002642&amp;t=m&amp;ie=UTF8&amp;hq=centro+cultural&amp;hnear=Vigil,+Tacna&amp;ll=-17.993826,-70.244533&amp;spn=0.003571,0.00456&amp;z=17&amp;output=embed"></iframe>
+			<img src="recursos/img/fotoflisol.png"/>
 			</div>
 			<div id="cronograma">
 				 <h3>Cronograma</h3>
 				 <img src="recursos/img/cronograma.png"/>
 			</div>
+</div>
 		<div id="organizadores">
 			<h3>Organizadores</h3>
 				<img src="recursos/img/organizadores/_Logo_BasadrinuX.png"/>
 		</div>
 		<div class="cinta3"></div>
-		<div id="publicidad">
+		<div class="publicidad">
 				<div id="patrocinan">
 					<h3>Patrocinan</h3>
-					<a href=""><img src="recursos/img/Patrocinan/logo UNJBG Oficial.png"/></a>
+					<a href=""><img src="recursos/img/Patrocinan/logo-UNJBG.png"/></a>
 					
 				</div>
 				<div id="auspicios">
-					<h3>Auspucian</h3>
+					<h3>Auspician</h3>
 					<a href=""><img src="recursos/img/Patrocinan/eureka.png"/></a>
 				</div>
 		</div>
 		<footer>
 			<img src="recursos/img/pie1.png">
 			<img src="recursos/img/pie2.png">
-			<p>El contenido de la web está bajo la licencia GPL. 
-El código fuente de esta página está disponible en <a href="https://github.com/flisoltacna" target="_blank">GitHub</a> bajo la GNU Public License 3.0.</p>
+			<p>
+				El contenido de la web está bajo la licencia GPL. 
+				El código fuente de esta página está disponible en <a href="https://github.com/flisoltacna" target="_blank">GitHub</a> bajo la GNU Public License 3.0.
+			</p>
 		</footer>	
 	</div>
 	<script type="text/javascript">

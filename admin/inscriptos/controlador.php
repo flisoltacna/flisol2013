@@ -17,7 +17,14 @@
 			$certificado = 0;
 		}
 
-		if(agregar_inscripcion($nombres,$apellidos,$fecha,$email,$dni,$telefono,$institucion,$certificado)){
+		if(isset($_POST['asistencia'])){
+			$asistencia = $_POST['asistencia'];
+		}
+		else{
+			$asistencia = 0;
+		}
+
+		if(agregar_inscripcion($nombres,$apellidos,$fecha,$email,$dni,$telefono,$institucion,$certificado,$asistencia)){
 			header("location:index.php?mensaje=1");
 		}
 		else{
@@ -33,6 +40,7 @@
 		$telefono = $_POST['telefono'];
 		$institucion = $_POST['institucion'];
 		$id = $_POST['id_inscripto'];
+
 		if(isset($_POST['certificado'])){
 			$certificado = $_POST['certificado'];
 		}
@@ -40,7 +48,14 @@
 			$certificado = 0;
 		}
 
-		if(actualizar_inscripcion($nombres,$apellidos,$email,$dni,$telefono,$institucion,$certificado,$id)){
+		if(isset($_POST['asistencia'])){
+			$asistencia = $_POST['asistencia'];
+		}
+		else{
+			$asistencia = 0;
+		}
+
+		if(actualizar_inscripcion($nombres,$apellidos,$email,$dni,$telefono,$institucion,$certificado,$id,$asistencia)){
 			header("location:index.php?mensaje=1");
 		}
 		else{

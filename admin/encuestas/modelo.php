@@ -26,4 +26,8 @@
 		return consulta("DELETE FROM asignaciones WHERE id = '".$id_asignacion."'");	
 	}
 
+	function votar_opcion($opcion,$valor){
+		return consulta("UPDATE opciones SET votos = '".$valor."' WHERE id = '".$opcion."'");
+	}
+
 ?>

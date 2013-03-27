@@ -84,6 +84,9 @@
 				    			<label class="checkbox inline">
 									<input type="checkbox" name="certificado" value="1">Certificado
 								</label>
+								<label class="checkbox inline">
+									<input type="checkbox" name="asistencia" value="1" checked>Asistencia
+								</label>
 							</div>
     						<div class="form-actions">
     							<button type="submit" name="agregar_inscripcion" class="btn btn-success block-menu">

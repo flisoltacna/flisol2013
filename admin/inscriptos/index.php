@@ -33,7 +33,7 @@
 				<input type="hidden" name="opcion" value="eliminar" />
 				<input type="hidden" name="id" value="" class="inscripto_id" />
 			</form>
-			<a href="agregar.php" class="btn btn-info">
+			<a href="#" class="btn btn-info">
 				<i class="icon-envelope icon-white"></i> Enviar mensaje
 			</a>
 		</section>

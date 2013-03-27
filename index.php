@@ -164,36 +164,36 @@
 	<div id="contenedor">
 	<!--FORMULARIO-->
 		<div id="formulario"<?php if (isset($error)) echo ' style="display: block"'; ?>> 
-		<form action="<?php echo URL_APP . "index.php"; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
+		<form action="<?php echo URL_APP; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
 		<fieldset>
 			<div class="clearfix">
 				<label>Nombres</label>
-				<input type="text" name="nombre" size="27" autofocus required />
+				<input type="text" name="nombre" size="27" autofocus required value="<?php if (isset($_POST["nombre"])) echo $_POST["nombre"]; ?>" />
 			</div>
 			<div class="clearfix">
 				<label>Apellidos</label>
-				<input type="text" name="apellidos" size="27" autofocus required />
+				<input type="text" name="apellidos" size="27" autofocus required value="<?php if (isset($_POST["apellidos"])) echo $_POST["apellidos"]; ?>" />
 			</div>
 			<div class="clearfix">
 				<label>DNI</label>
-				<input type="text" name="dni" size="27" pattern="\d{8}" maxlength="8" required />
+				<input type="text" name="dni" size="27" pattern="\d{8}" maxlength="8" required value="<?php if (isset($_POST["dni"])) echo $_POST["dni"]; ?>" />
 			</div>
 			<div class="clearfix">
 				<label>Email</label>
-				<input type="email" name="email" size="27" required />
+				<input type="email" name="email" size="27" required value="<?php if (isset($_POST["email"])) echo $_POST["email"]; ?>" />
 			</div>
 			<div class="clearfix">
 				<label>Teléfono</label>
-				<input type="text" name="fono" size="27" pattern="\+?\d{9,13}" required />
+				<input type="text" name="fono" size="27" pattern="\+?\d{9,13}" required value="<?php if (isset($_POST["fono"])) echo $_POST["fono"]; ?>" />
 			</div>
 			<div class="clearfix">
 				<label>Organización/C. Estudio/Empresa</label>
-				<input type="text" name="organizacion" size="27" required />
+				<input type="text" name="organizacion" size="27" required value="<?php if (isset($_POST["organizacion"])) echo $_POST["organizacion"]; ?>" />
 			</div>
 			<div id="certificado">
 			<label>Certificado: (S/. 20)</label>
-			<label><input type="radio" name="certificado" value="SI" /> Sí</label>
-			<label><input type="radio" name="certificado" value="NO" checked/> No</label>
+			<label><input type="radio" name="certificado" value="SI" <?php if (isset($_POST["certificado"]) and $_POST["certificado"] == "SI") echo "checked "; ?>/> Sí</label>
+			<label><input type="radio" name="certificado" value="NO" <?php if (isset($_POST["certificado"]) and $_POST["certificado"] == "SI") echo " "; else echo "checked "; ?>/> No</label>
 			</div>
 			<input type="submit" name="mysubmit" id="mysubmit" value="Realizar Inscripción"/>
 		</fieldset>	

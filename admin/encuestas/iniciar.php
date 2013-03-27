@@ -12,8 +12,7 @@
 		<img src="../../recursos/img/portada.png">
 	</div>
 	<div class="contenido">
-		<h2>Bienvenido a la siguiente encuesta sobre Software Libre</h2>
-			Agradecemos tu participación!.
+		<h2>Bienvenido a la siguiente encuesta sobre Software Libre!</h2>
 		<p>
 			<a href="online.php" class="btn btn-success">Empezar</a>
 		</p>

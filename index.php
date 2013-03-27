@@ -218,7 +218,7 @@
 				<div id="masdatos01">
 					<h3>Encuesta</h3>
 					<div id="Preinscripcion">
-						<a href="admin/encuestas/iniciar.php">Llenar Encuesta</a>
+						<a href="admin/encuestas/iniciar.php" target="_blank">Llenar Encuesta</a>
 					</div>
 				</div>
 				<div id="masdatos02">

@@ -40,7 +40,6 @@ font-size: 20px;
 h3{
 	font-family: 'Julius Sans One', sans-serif;
 	font-weight: normal;
-	font-size: 23px;
 }
 h2{
 	text-align: center;
@@ -418,6 +417,11 @@ float: right;display: inline-block;
 -webkit-transition-duration: 0.5s;
 -moz-transition-duration: 0.5s;
 -o-transition-duration: 0.5s;
+}
+#datosevento{
+	width: 960px;
+	height: auto;
+	display: inline-block;
 }
 #lugar, #cronograma{
 	width:100%;

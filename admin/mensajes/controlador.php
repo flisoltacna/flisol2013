@@ -16,10 +16,10 @@ if(isset($_POST['btn_enviar_mensaje'])){
 	//$mail->SMTPKeepAlive = true;              // SMTP connection will not close after each email sent
 	$mail->Host          = "smtp.gmail.com";    // sets the SMTP server
 	$mail->Port          = 465;                 // set the SMTP port for the GMAIL server
-	$mail->Username      = "vanessapr.85@gmail.com"; // SMTP account username
-	$mail->Password      = "megustadebian2013";        // SMTP account password
+	$mail->Username      = "flisoltacna.peru@gmail.com"; // SMTP account username
+	$mail->Password      = "flisoltacna2013";        // SMTP account password
 	//$mail->CharSet  	 = 'UTF-8';
-	$mail->SetFrom('vanessapr.85@gmail.com', 'FLISOL TACNA 2013');
+	$mail->SetFrom('flisoltacna.peru@gmail.com', 'FLISOL TACNA 2013');
 	//$mail->AddReplyTo('list@mydomain.com', 'List manager');
 	
 	$mail->Subject       = $_POST['asunto']; 	  //asunto del mensaje

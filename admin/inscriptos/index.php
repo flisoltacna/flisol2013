@@ -33,9 +33,10 @@
 				<input type="hidden" name="opcion" value="eliminar" />
 				<input type="hidden" name="id" value="" class="inscripto_id" />
 			</form>
-			<a href="#" class="btn btn-info">
-				<i class="icon-envelope icon-white"></i> Enviar mensaje
-			</a>
+			<form action="../mensajes/index.php" method="POST" id="form-mensajes" class="form-horizontal">
+				<button class="btn btn-info"><i class="icon-envelope icon-white"></i> Enviar mensaje</button>
+				<input type="hidden" name="ids" value="" class="inscripto_id" />
+			</form>
 		</section>
     	<?php $inscriptos = @query_data("SELECT * FROM inscriptos");?>
     	<section>
@@ -133,6 +134,18 @@
 				$("#form-eliminar .inscripto_id").attr('value', array);	
 			}
 			if($("#form-eliminar .inscripto_id").val() == ""){
+				event.preventDefault();
+				event.stopPropagation();
+			}
+		});
+
+		//boton para enviar mensajes
+		$("#form-mensajes").submit(function(event){
+			var array = $("input[name=inscriptoid]:checked").getCheckboxValues();
+			if(array.length != 0){
+				$("#form-mensajes .inscripto_id").attr('value', array);	
+			}
+			if($("#form-mensajes .inscripto_id").val() == ""){
 				event.preventDefault();
 				event.stopPropagation();
 			}

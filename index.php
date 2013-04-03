@@ -1,5 +1,6 @@
 <?php 
 	require_once('config/conexion.php');
+	require_once('recursos/funciones.php');
 
 	if (isset($_POST["mysubmit"])) {
 		$error = include_once("admin/inscriptos/registrar.php");
@@ -137,8 +138,13 @@
 		<hgroup><div class="lema"><h3>
 			"Ahora en Tacna se vive el software libre"
 		</h3></div></hgroup>
-		<hgroup><h3>CENTRO CULTURAL MUNICIPAL ALTO DE LA ALIANZA</h3></hgroup>
-		
+		<?php 
+			$total = query("SELECT MAX(id) AS total FROM inscriptos");
+			$disponible = 300 - (int)$total['total'];
+		?>
+		<div id="total">
+			<h4><?php echo $disponible;?><span>Entradas disponibles</span></h4>
+		</div>
 		<div id="Preinscripcion"<?php if (isset($error)) echo ' style="display: none"'; ?>>
 			<a href="javascript:box_actions.open()">Realizar Inscripcion</a>
 		</div>
@@ -215,11 +221,11 @@
 			</section>
 
 			<div id="masdatos">
-				<div id="masdatos01">
+				<div id="encuesta">
 					<h3>Encuesta</h3>
-					<div id="Preinscripcion">
+					<span>
 						<a href="admin/encuestas/iniciar.php" target="_blank">Llenar Encuesta</a>
-					</div>
+					</span>
 				</div>
 				<div id="masdatos02">
 					<h3>Flisol 2012</h3>

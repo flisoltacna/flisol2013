@@ -202,22 +202,16 @@ float: right;
 #Preinscripcion, #CerrarPreinscripcion{
 	text-align: center;
 	margin-bottom: 25px;
-	margin-top: 40px;
+	margin-top: 13px;
 }
 #Preinscripcion a {
 	text-decoration: none;
 	background: #FFA300;
 	color:#fff;
-	padding: 10px 20px;
-	border: 5px solid #C27C00;
+	padding: 15px 25px;
 	font-family: 'Julius Sans One', sans-serif;
 	font-size: 20px;
-	text-shadow:0px 0px 10px #000;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-ms-border-radius:5px;
-	-o-border-radius:5px;
-	-webkit-border-radius:5px;
+	text-shadow: -1px -1px 1px #000000;
 }
 #CerrarPreinscripcion a{
 	text-decoration: none;
@@ -234,7 +228,7 @@ float: right;
 	-o-border-radius:5px;
 	-webkit-border-radius:5px;
 }
-#Preinscripcion a:hover, #CerrarPreinscripcion a:hover{
+#Preinscripcion a:hover, #CerrarPreinscripcion a:hover,#encuesta span a:hover{
 	text-shadow:0px 0px 10px #fff;
 	background: #FFB532;
 }
@@ -248,7 +242,40 @@ float: right;
         -o-background-size: cover;
         border-bottom: 8px solid #8A1F1F;
 }
-
+#total{
+    text-align: center;
+    padding: 10px 15px;
+}
+#total h4 {
+    color: #89301C;
+    background: #FFA300;
+    line-height: 30px;
+    padding: 5px 0 0;
+    font-size: 30px;
+    font-family: arial,sans-serif,tahoma;
+}
+#total h4 span {
+	font-family: 'Julius Sans One',sans-serif;
+	display: block;	
+    font-size: 17px;
+    font-weight: 200;
+}
+#encuesta{
+	text-align: center;
+	margin-bottom: 40px;
+}
+#encuesta h3{
+	margin-bottom: 25px;
+}
+#encuesta span a{
+	background: #FFA300;
+    color: #FFFFFF;
+    font-family: 'Julius Sans One',sans-serif;
+    font-size: 20px;
+    padding: 15px 40px;
+    text-decoration: none;
+    text-shadow: -1px -1px 1px #000000;
+}
 /*=====================FORMULARIO=================*/
 fieldset{
 	border:none;
@@ -547,6 +574,7 @@ footer a{
 	color:#B10000;
 	text-decoration: none;
 }
+
 
 
 

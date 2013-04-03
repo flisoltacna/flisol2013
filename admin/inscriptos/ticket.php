@@ -34,5 +34,8 @@
 	$pdf->SetXY(0, 98);
 	$pdf->Cell(0, 0, $_POST["certificado"], 0, 1, 'C');
 
+	$pdf->SetXY(80, 84);
+	$pdf->Cell(0, 0, $_POST["numero"], 0, 1, 'C');
+
 	$pdf->Output("Ticket.pdf", 'D');
 ?>

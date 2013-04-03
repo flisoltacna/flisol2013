@@ -1,9 +1,9 @@
 <?php
+	require_once('recursos/funciones.php');
+
 	if (!isset($_POST["mysubmit"])) {
 		exit;
-	}
-
-	require_once('recursos/funciones.php');
+	}	
 
 	if (empty($_POST["nombre"]) or empty($_POST["apellidos"]) or empty($_POST["dni"]) or empty($_POST["email"]) or empty($_POST["fono"]) or empty($_POST["organizacion"]) or empty($_POST["certificado"])) {
 		return 1;
@@ -31,10 +31,13 @@
 	$fecha = fecha_hora();
 	
 	//buscar si se encuentra registrado,... 
-	$inscripto = query("SELECT * FROM inscriptos WHERE dni LIKE '".$dni."' AND nombres LIKE '".$nombre."' AND apellidos LIKE '".$apellidos."'");
+	$inscripto = query("SELECT * FROM inscriptos WHERE dni LIKE '".$dni."' OR (nombres LIKE '".$nombre."' AND apellidos LIKE '".$apellidos."')");
 	
 	if(empty($inscripto)){
-		if(!consulta("INSERT INTO inscriptos(nombres, apellidos, dni, email, telefono, organizacion, fecha_registro, certificado) VALUES('".$nombre."', '".$apellidos."', ".$dni.", '".$email."', ".$fono.", '".$organizacion."', '".$fecha."', '". ($certificado == "SI" ? "1" : "0") ."')")) {
+		if(consulta("INSERT INTO inscriptos(nombres, apellidos, dni, email, telefono, organizacion, fecha_registro, certificado) VALUES('".$nombre."', '".$apellidos."', ".$dni.", '".$email."', ".$fono.", '".$organizacion."', '".$fecha."', '". ($certificado == "SI" ? "1" : "0") ."')")) {
+			$numero_max = query("SELECT MAX(id) AS numero FROM inscriptos");	
+		}
+		else{
 			return 5;
 		}	
 	}
@@ -60,6 +63,8 @@
 				<div class="datos_2"><?php echo $dni; ?></div>
 				<div class="datos_3"><?php echo $certificado; ?></div>
 			</div>
+			<?php $numero = "Nro. ".zerofill($numero_max['numero'],4);?>
+			<div class="numeracion"><?php echo $numero;?></div>
 		</div>
 		<section>
 			<input type="button" name="imprimir" value="Imprimir" onclick="window.print();" />
@@ -67,6 +72,7 @@
 				<input name="nombre" type="hidden" value="<?php echo "$nombre $apellidos"; ?>" />
 				<input name="dni" type="hidden" value="<?php echo $dni; ?>" />
 				<input name="certificado" type="hidden" value="<?php echo $certificado; ?>" />
+				<input name="numero" type="hidden" value="<?php echo $numero; ?>" />
 				<input type="submit" name="descargar" value="Descargar" />
 			</form>
 			<div id="inicio"> <a href="<?php echo URL_APP; ?>">Ir a Inicio</a></div>

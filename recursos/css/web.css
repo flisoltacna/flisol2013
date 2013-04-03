@@ -574,7 +574,11 @@ footer a{
 	color:#B10000;
 	text-decoration: none;
 }
-
+.social {
+  display:inline-block;
+  margin-bottom:5px;
+  text-align:center;
+}
 
 
 

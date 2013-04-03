@@ -9,7 +9,7 @@
 	<meta name="description" content="Festival latinoamericano de instalacion de Software libre 2013 - Flisol tacna">
 	<meta name="author" content="comunidad de software libre Basadrinux" >
 	<title>Festival latinoamericano de instalacion de Software libre 2013 - Flisol Tacna</title>
-	<link href="<?php echo URL_APP;?>recursos/img/icono.png' rel='shortcut icon" type='image/gif'/>
+	<link href="<?php echo URL_APP;?>recursos/img/icono.png" rel="shortcut icon" type='image/gif'/>
 	<link rel="stylesheet" href="<?php echo URL_APP;?>recursos/css/encuesta.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/jquery.validate.js"></script>

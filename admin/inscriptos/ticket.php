@@ -25,7 +25,7 @@
 
 	$pdf->SetFont("Arial", "", 9.8);
 
-	$pdf->SetXY(27, 71);
+	$pdf->SetXY(10, 71);
 	$pdf->Cell(0, 0, $_POST["nombre"], 0, 2, 'C');
 
 	$pdf->SetXY(0, 84);

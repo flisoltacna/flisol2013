@@ -75,7 +75,7 @@
 	        $('#fondobanner').css('height','200px');
 	        $('#info-izquierda').css('font-size','10px' ).css('width','100%').css('height','auto').css('background','#363636');
 	        $('#redsocial').css('display','none');
-
+	        $('#total').css('display','none');
 	        $('#CerrarPreinscripcion').css('display','block');
 	    },
 	    close: function(){
@@ -86,7 +86,7 @@
 	        $('#fondobanner').css('height','630px');
 	        $('#info-izquierda').css('font-size','100%' ).css('width','300px').css('height','400px').css('background','#363636');
 	        $('#redsocial').css('display','block');
-
+	        $('#total').css('display','block');
 	        $('#CerrarPreinscripcion').css('display','none');
 	    }
 	}

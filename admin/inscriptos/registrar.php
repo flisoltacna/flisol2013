@@ -29,9 +29,17 @@
 	$organizacion = $_POST["organizacion"];
 	$certificado = $_POST["certificado"];
 	$fecha = fecha_hora();
-
-	if(!consulta("INSERT INTO inscriptos(nombres, apellidos, dni, email, telefono, organizacion, fecha_registro, certificado) VALUES('".$nombre."', '".$apellidos."', ".$dni.", '".$email."', ".$fono.", '".$organizacion."', '".$fecha."', '". ($certificado == "SI" ? "1" : "0") ."')")) {
-		return 5;
+	
+	//buscar si se encuentra registrado,... 
+	$inscripto = query("SELECT * FROM inscriptos WHERE dni LIKE '".$dni."' AND nombres LIKE '".$nombre."' AND apellidos LIKE '".$apellidos."'");
+	
+	if(empty($inscripto)){
+		if(!consulta("INSERT INTO inscriptos(nombres, apellidos, dni, email, telefono, organizacion, fecha_registro, certificado) VALUES('".$nombre."', '".$apellidos."', ".$dni.", '".$email."', ".$fono.", '".$organizacion."', '".$fecha."', '". ($certificado == "SI" ? "1" : "0") ."')")) {
+			return 5;
+		}	
+	}
+	else{
+		return 6;
 	}
 ?>
 <!--Codigo Insertado del TICKET-->

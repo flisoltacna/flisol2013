@@ -269,13 +269,20 @@
 			</p>
 		</footer>	
 	</div>
+
+<?php if(isset($error) and $error == 6):?>
 	<script type="text/javascript">
-		$.getJSON("http://picasaweb.google.com/data/feed/base/user/111966957349242981203/albumid/5855518971056638033?alt=json&kind=photo&hl=en_US&max-results=8&fields=entry(title,gphoto:numphotos,media:group(media:content,media:thumbnail),link)", 
-				function(data) {
-				$.each(data.feed.entry, function(i,item){
-		            $("<img/>").attr("src", item.media$group.media$thumbnail[2].url).appendTo("#picasa");
-		        });	
-			});
+		alert("Ud. ya se encuentra registrado!");	
 	</script>
+<?php endif;?>
+
+<script type="text/javascript">
+	$.getJSON("http://picasaweb.google.com/data/feed/base/user/111966957349242981203/albumid/5855518971056638033?alt=json&kind=photo&hl=en_US&max-results=8&fields=entry(title,gphoto:numphotos,media:group(media:content,media:thumbnail),link)", 
+			function(data) {
+			$.each(data.feed.entry, function(i,item){
+		            $("<img/>").attr("src", item.media$group.media$thumbnail[2].url).appendTo("#picasa");
+		      });	
+		});
+</script>
 </body>
 </html>

@@ -73,5 +73,9 @@
 			<button type="submit" name="votar" class="btn btn-success">Enviar</button>
 		</div>
 	</form>
+	
+	<script type="text/javascript">
+		
+	</script>
 </body>
 </html>

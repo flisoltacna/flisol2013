@@ -95,6 +95,7 @@
 	<title>Flisol Tacna</title>
 </head>
 <body>
+	<div id="fb-root"></div>
 	<div id="encabezado">
 		<div id="sol"></div>
 		<header>
@@ -233,6 +234,9 @@
 					<div id="picasa"></div>
 					<!-- Galeria de Imagenes -->
 				</div>
+				<div id="facebook">
+					<div class="fb-like-box" data-href="https://www.facebook.com/FlisolTacnaPeru" data-width="450" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-border-color="#BD2B2B" data-header="false"></div>
+				</div>
 			</div>
 		</div>
 		
@@ -258,8 +262,8 @@
 		<div class="publicidad">
 				<div id="patrocinan">
 					<h3>Patrocinan</h3>
-					<a href=""><img src="recursos/img/Patrocinan/logo-UNJBG.png"/></a>
-					
+					<a href="http://www.unjbg.edu.pe"><img src="recursos/img/Patrocinan/logo-UNJBG.png"/></a>
+					<a href="http://www.munialtoalianza.gob.pe"><img src="recursos/img/Patrocinan/logo-mdaa.png"/></a>
 				</div>
 				<div id="auspicios">
 					<h3>Auspician</h3>
@@ -290,5 +294,13 @@
 		      });	
 		});
 </script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

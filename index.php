@@ -9,6 +9,15 @@
 			exit;
 		}
 	}
+
+	if (isset($_POST["ticket"])) {
+		$errorticket = include_once("admin/inscriptos/buscar.php");
+
+		if ($errorticket === false) {
+			exit;
+		}
+	}
+
 ?>
 <!DOCTYPE HTML>
 <html lang="es-Es">
@@ -77,6 +86,9 @@
 	        $('#redsocial').css('display','none');
 	        $('#total').css('display','none');
 	        $('#CerrarPreinscripcion').css('display','block');
+
+	        $('#CerrarBusqueda').css('display','none');
+			$('#form-ticket').css('display','none');
 	    },
 	    close: function(){
 	        $('#formulario').slideUp('slow');
@@ -89,6 +101,18 @@
 	        $('#total').css('display','block');
 	        $('#CerrarPreinscripcion').css('display','none');
 	    }
+	}
+
+	var ticket = {
+		open: function(){
+			$('#form-ticket').slideDown('slow');
+			$('#CerrarBusqueda').css('display','block');			
+		},
+		close: function(){
+			$('#form-ticket').slideDown('slow');
+			$('#CerrarBusqueda').css('display','none');
+			$('#form-ticket').css('display','none');
+		}
 	}
 	</script>
 	<!--FIN ver El form-->
@@ -166,9 +190,33 @@
 		<object width="650" height="400"><param name="movie" value="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3" type="application/x-shockwave-flash" width="650" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 	</div>
 	</div>
+	</div>
+
+	<div id="ticket">
+		<p>
+			<span style="color: #ffb532;">(*) </span>
+			<span>¿Perdiste tu Ticket?</span>, entonces haz click en el siguiente 
+			<a href="javascript:ticket.open()">enlace.</a> 
+		</p>
 	</div>	
 	</div>
+
 	<div id="contenedor">
+		<div id="content-buscar">
+			<div id="CerrarBusqueda" style="display: none">
+				<a href="javascript:ticket.close()">Cancelar búsqueda</a>
+			</div>
+			<div id="form-ticket">
+				<form action="<?php echo URL_APP; ?>" method="POST">
+					<fieldset>
+						<label>DNI.</label>
+						<input type="text" name="dni" size="27" pattern="\d{8}" maxlength="8" autofocus required/>
+						<input type="submit" name="ticket" id="mysubmit" value="Generar Ticket"/>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
 	<!--FORMULARIO-->
 		<div id="formulario"<?php if (isset($error)) echo ' style="display: block"'; ?>> 
 		<form action="<?php echo URL_APP; ?>" method="POST" id="fo3" name="fo3" onSubmit="return limpiar()" >
@@ -283,6 +331,12 @@
 <?php if(isset($error) and $error == 6):?>
 	<script type="text/javascript">
 		alert("Ud. ya se encuentra registrado!");	
+	</script>
+<?php endif;?>
+
+<?php if(isset($errorticket) and $errorticket == 8):?>
+	<script type="text/javascript">
+		alert("Ud. no se encuentra registrado!");	
 	</script>
 <?php endif;?>
 

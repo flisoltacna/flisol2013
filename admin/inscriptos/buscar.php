@@ -1,48 +1,20 @@
 <?php
 	require_once('recursos/funciones.php');
 
-	if (!isset($_POST["mysubmit"])) {
+	if (!isset($_POST["ticket"])) {
 		exit;
 	}	
 
-	if (empty($_POST["nombre"]) or empty($_POST["apellidos"]) or empty($_POST["dni"]) or empty($_POST["email"]) or empty($_POST["fono"]) or empty($_POST["organizacion"]) or empty($_POST["certificado"])) {
-		return 1;
-	}
-
 	if (!validar_campo($_POST["dni"], "\d{8}")) {
-		return 2;
+		return 7;
 	}
 
-	if (!validar_campo($_POST["email"], "^\S+@\S+\.\S+$")) {
-		return 3;
-	}
-
-	if (!validar_campo($_POST["fono"], "\+?\d{9,13}")) {
-		return 4;
-	}
-
-	$nombre = strtoupper(utf8_decode($_POST["nombre"]));
-	$apellidos = strtoupper(utf8_decode($_POST["apellidos"]));
 	$dni = $_POST["dni"];
-	$email = $_POST["email"];
-	$fono = $_POST["fono"];
-	$organizacion = $_POST["organizacion"];
-	$certificado = $_POST["certificado"];
-	$fecha = fecha_hora();
 	
-	//buscar si se encuentra registrado,... 
-	$inscripto = query("SELECT * FROM inscriptos WHERE dni LIKE '".$dni."' OR (nombres LIKE '".$nombre."' AND apellidos LIKE '".$apellidos."')");
+	$inscripto = query("SELECT * FROM inscriptos WHERE dni LIKE '".$dni."'");
 	
 	if(empty($inscripto)){
-		if(consulta("INSERT INTO inscriptos(nombres, apellidos, dni, email, telefono, organizacion, fecha_registro, certificado) VALUES('".$nombre."', '".$apellidos."', ".$dni.", '".$email."', ".$fono.", '".$organizacion."', '".$fecha."', '". ($certificado == "SI" ? "1" : "0") ."')")) {
-			$numero_max = query("SELECT MAX(id) AS numero FROM inscriptos");	
-		}
-		else{
-			return 5;
-		}	
-	}
-	else{
-		return 6;
+		return 8;
 	}
 
 ?>
@@ -62,16 +34,25 @@
 		<div id="ticket">
 			<img src="<?php echo URL_APP; ?>recursos/img/ticket/ticket.png">
 			<div id="datos">
-				<div class="datos_1"><?php echo $nombre ." ".$apellidos; ?></div>
+				<div class="datos_1"><?php echo $inscripto['nombres'] ." ".$inscripto['apellidos']; ?></div>
 				<div class="datos_2"><?php echo $dni; ?></div>
+				<?php 
+					if($inscripto['certificado']){
+						$certificado = "SI";
+					}
+					else{
+						$certificado = "NO";
+					}
+				?>	
 				<div class="datos_3"><?php echo $certificado; ?></div>
 			</div>
-			<?php $numero = "Nro. ".zerofill($numero_max['numero'],4);?>
+			<?php $numero = "Nro. ".zerofill($inscripto['id'],4);?>
 			<div class="numeracion"><?php echo $numero;?></div>
 		</div>
 		<section>
 			<input type="button" name="imprimir" value="Imprimir" onclick="window.print();" />
 			<form method="post" action="admin/inscriptos/ticket.php" style="display:inline">
+				<?php $nombre = $inscripto['nombres']; $apellidos= $inscripto['apellidos'];?>
 				<input name="nombre" type="hidden" value="<?php echo "$nombre $apellidos"; ?>" />
 				<input name="dni" type="hidden" value="<?php echo $dni; ?>" />
 				<input name="certificado" type="hidden" value="<?php echo $certificado; ?>" />

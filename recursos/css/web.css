@@ -175,7 +175,6 @@ padding: 0px 40px 0px 40px;
 #info-izquierda{
 	width: 300px;
 	height: 400px;
-	background: #363636;
 	display: inline-block;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
@@ -199,7 +198,6 @@ float: right;
 	font-size: 25px;
 }
 #redsocial {
-	background: #252525;
 	padding: 7px;
 }
 #redsocial:hover {
@@ -215,6 +213,20 @@ float: right;
 }
 #redsocial img{
 	cursor: pointer;
+	duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+}
+#redsocial img:hover{
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
 }
 #Preinscripcion, #CerrarPreinscripcion{
 	text-align: center;
@@ -269,7 +281,7 @@ float: right;
 	background: #FFB532;
 }
 #fondobanner{
-	background:url("../../recursos/img/fondo-tacna02.jpg")no-repeat center;
+	background:url("../../recursos/img/fondopag.png")no-repeat center;
 	width: 100%;
 	height: 630px;
 	background-size: cover;

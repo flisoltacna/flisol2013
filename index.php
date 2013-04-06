@@ -96,7 +96,7 @@
 
 	        $('#info-derecha').css('display','block');
 	        $('#fondobanner').css('height','630px');
-	        $('#info-izquierda').css('font-size','100%' ).css('width','300px').css('height','400px').css('background','#363636');
+	        $('#info-izquierda').css('font-size','100%' ).css('width','300px').css('height','400px').css('background','none');
 	        $('#redsocial').css('display','block');
 	        $('#total').css('display','block');
 	        $('#CerrarPreinscripcion').css('display','none');

@@ -1,5 +1,8 @@
 <?php
 include('config.php');
+$card = $_POST['base'];
+if(!$card) { die('Error'); };
+
 // check if curl is enabled
 if (!in_array  ('curl', get_loaded_extensions())){die('curl required!');} 
 
@@ -26,15 +29,42 @@ $fbuser = $facebook->getUser();
         $fbuser = null;
       }
    @unlink($temp_folder.$fbuser.'.jpg');
-    ///if(!copy('http://ikeylive.heliohost.org/flisol/img.php?user='.$fbuser,$temp_folder.$fbuser.'.jpg'))
     if(!copy('http://flisol.freetzi.com/img.php?user='.$fbuser,$temp_folder.$fbuser.'.jpg'))
     {
         die('Could not copy image!');
     }
 
     ##### start generating Facebook ID ########
-    $dest = imagecreatefrompng($image_id_png); // source id card image template
+    $dest = imagecreatefrompng('assets/'. $card . '.png'); // source id card image template
     $src = imagecreatefromjpeg($temp_folder.$fbuser.'.jpg'); //facebook user image stored in our temp folder
+
+///////////////////////////////////////////////////////////////////////////////////////
+if($card == 'CARD01'){
+    $distro = 'Ubuntu';
+    $base = 'CARD01.png';
+    $color = ImageColorAllocate($dest, 255, 255, 255);
+};
+
+
+if($card == 'CARD02'){
+    $distro = 'Debian';
+    $base = 'CARD02.png';
+    $color =  imagecolorallocate($dest, 74, 74, 74);
+};
+
+if($card == 'CARD03'){
+    $distro = 'Linux Mint';
+    $base = 'CARD03.png';
+    $color = ImageColorAllocate($dest, 0, 0, 0);
+};
+
+if($card == 'CARD04'){
+    $distro = 'Fedora';
+    $base = 'CARD04.png';
+    $color =  imagecolorallocate($dest, 74, 74, 74);
+};
+
+///////////////////////////////////////////////////////////////////////////////////////
     
     imagealphablending($dest, false); 
     imagesavealpha($dest, true);
@@ -62,14 +92,9 @@ $fbuser = $facebook->getUser();
 
     imagealphablending($dest, true); //bring back alpha blending for transperent font
     
-   //imagettftext($dest, 10, 0, 170, 190, $facebook_grey , $font, $txt_user_id); //Write user id to id card
-    imagettftext($dest, 15, 0, 95, 151, $facebook_grey, $font, $txt_user_name); //Write name to id card
-    //imagettftext($dest, 15, 0, 25, 204, $facebook_grey, $font, $txt_user_gender); //Write gender to id card
-    imagettftext($dest, 15, 0, 135, 190, $facebook_grey, $font, $txt_user_hometown); //Write hometown to id card
-   // imagettftext($dest, 15, 0, 135, 228, $facebook_grey, $font, $for_birthdate); //Write birthday to id card
-    imagettftext($dest, 15, 0, 135, 228, $facebook_grey, $font, $txt_user_birth); //Write birthday to id card
-    //imagettftext($dest, 10, 0, 25, 215, $facebook_grey, $font, $user_text); //Write custom text to id card
-    //imagettftext($dest, 8, 0, 25, 240, $facebook_blue, $font, $txt_credit); //Write credit link to id card
+    imagettftext($dest, 15, 0, 103, 154, $color, $font, $txt_user_name); //Write name to id card
+    imagettftext($dest, 15, 0, 125, 187, $color, $font, $txt_user_hometown); //Write hometown to id card
+    imagettftext($dest, 14, 0, 143, 220, $color, $font, $distro); //Write birthday to id card
     
     imagepng($dest, $temp_folder.'id_'.$fbuser.'.jpg'); //save id card in temp folder
 

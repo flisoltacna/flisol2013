@@ -2,6 +2,7 @@ body {
 	background:url(../images/tile4.png);
 	font-family:Open Sans;
 	color:#FFF;
+	margin:0 0 0 0;
 }
 #contenido_guest {
 	text-align:center;
@@ -16,7 +17,6 @@ body {
 }
 
 #footer {
-	position: fixed;
 	left: 0px;
 	bottom: 0px;
 	height: 60px;

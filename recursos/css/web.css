@@ -560,7 +560,7 @@ display: inline-block !important;
 #patrocinan img{
 	width: 35%;
 }
-#auspicios img{
+#auspicios .img-auspicio{
 	width: 30%;
 }
 #patrocinan img , #auspicios img{

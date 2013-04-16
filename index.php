@@ -299,7 +299,7 @@
 			</div>
 			<div id="cronograma">
 				 <h3>Cronograma</h3>
-				 <img src="recursos/img/cronograma.png"/>
+				 <img src="recursos/img/lineas-tematicas.png"/>
 			</div>
 </div>
 		<div id="organizadores">
@@ -315,7 +315,8 @@
 				</div>
 				<div id="auspicios">
 					<h3>Auspician</h3>
-					<a href=""><img src="recursos/img/Patrocinan/eureka.png"/></a>
+					<a href="#"><img src="recursos/img/Patrocinan/eureka.png" class="img-auspicio"/></a>
+					<a href="#"><img src="recursos/img/Patrocinan/chicha-company.png" width="215px"/></a>
 				</div>
 		</div>
 		<footer>

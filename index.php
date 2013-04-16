@@ -317,6 +317,8 @@
 					<h3>Auspician</h3>
 					<a href="#"><img src="recursos/img/Patrocinan/eureka.png" class="img-auspicio"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/chicha-company.png" width="215px"/></a>
+					<a href="#"><img src="recursos/img/Patrocinan/tacna.gif" width="120px"/></a>
+					<a href="#"><img src="recursos/img/Patrocinan/radio-cmf.png" width="170px"/></a>
 				</div>
 		</div>
 		<footer>

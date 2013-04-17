@@ -101,7 +101,7 @@ padding-top: 0;
 #menu1{
 	width: 100%;
 	height: auto;
-	background: #3F3F3F;
+	background: transparent;
 	position: relative;
 	border-bottom: 3px solid #FF8500;
 	margin-bottom: 8px;
@@ -117,6 +117,7 @@ height: auto;
 }
 nav ul {
 margin: 0;
+padding: 0;
 }
 nav li {
 display: inline-block;
@@ -124,7 +125,7 @@ zoom: 1;
 list-style: none;
 text-align: center;
 vertical-align: top;
-width: 15%;
+width: 20%;
 }
 nav li a {
 background: url("../../recursos/img/fond-menu.png") no-repeat center 28px;
@@ -146,11 +147,15 @@ nav li a:hover{
 	color: #fff;
 	text-shadow:0px 0px 5px #fff;
 	background-position-y:-35px;
-	-o-transition: .2s;
+	-o-transition: .2s;  
 	-ms-transition: .2s;
 	-moz-transition: .2s;
 	-webkit-transition: .2s;
 	transition: .2s;
+	border-radius:25px 25px 0px 0px;
+	-webkit-border-radius:25px 25px 0px 0px;
+	-moz-border-radius:25px 25px 0px 0px;
+	-o-border-radius:25px 25px 0px 0px;
 }
 #titulo{
 	width: 960px;

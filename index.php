@@ -319,6 +319,8 @@
 					<a href="#"><img src="recursos/img/Patrocinan/chicha-company.png" width="215px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/tacna.gif" width="120px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/radio-cmf.png" width="170px"/></a>
+					<a href="#"><img src="recursos/img/Patrocinan/logo-ebenezer.png"/></a>
+					<a href="#"><img src="recursos/img/Patrocinan/coyotex.png" /></a>
 				</div>
 		</div>
 		<footer>

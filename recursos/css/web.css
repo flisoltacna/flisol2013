@@ -5,10 +5,26 @@ body{
 }
 ::selection {
 background: #AF3E3E;
-}
+} 
 h4{
 	padding-left: 15px;
 	margin: 0px;
+}
+#reloj img{
+duration: 0.2s;
+-webkit-transition-duration: 0.2s;
+-moz-transition-duration: 0.2s;
+-o-transition-duration: 0.2s;
+}
+#reloj img:hover{
+	transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-moz-transform: scale(1.2);
+-o-transform: scale(1.2);
+duration: 0.2s;
+-webkit-transition-duration: 0.2s;
+-moz-transition-duration: 0.2s;
+-o-transition-duration: 0.2s;
 }
 #reloj{
 	width: 100%;
@@ -66,7 +82,7 @@ text-decoration: none;
 header{
 	background: transparent;
 	width: 960px;
-	height: 130px;
+	height: auto;
 	margin: 0 auto;
 
 }
@@ -78,9 +94,17 @@ header{
 	text-align:center;
 }
 #logo img{
-width: 220px;
+width: 160px;
 height: auto;
 padding-top: 0;
+}
+#menu1{
+	width: 100%;
+	height: auto;
+	background: #3F3F3F;
+	position: relative;
+	border-bottom: 3px solid #FF8500;
+	margin-bottom: 8px;
 }
 nav{
 	width: 100%;
@@ -93,7 +117,6 @@ height: auto;
 }
 nav ul {
 margin: 0;
-margin-left: -45px;
 }
 nav li {
 display: inline-block;
@@ -101,7 +124,7 @@ zoom: 1;
 list-style: none;
 text-align: center;
 vertical-align: top;
-width: 13%;
+width: 15%;
 }
 nav li a {
 background: url("../../recursos/img/fond-menu.png") no-repeat center 28px;
@@ -119,7 +142,7 @@ transition: .2s;
 font-family: 'Julius Sans One', sans-serif;
  }
 nav li a:hover{
-	background-color:rgba(0, 0, 0, 0.16);
+	background-color:#292929;
 	color: #fff;
 	text-shadow:0px 0px 5px #fff;
 	background-position-y:-35px;
@@ -130,12 +153,10 @@ nav li a:hover{
 	transition: .2s;
 }
 #titulo{
-	margin-top: 15px;
 	width: 960px;
 	height: 90px;
 	background: url('../../recursos/img/fondo-titulo.png');
 	position: absolute;
-	border-bottom: 5px solid #A51E1E;
 }
 #titulo h1{
 text-align: center;
@@ -154,7 +175,7 @@ padding: 0px 40px 0px 40px;
 #ticket p{
 	font-family: 'Advent Pro',Arial,sans-serif;
 	color: #fff;
-	margin: 0 0 0 10px;
+	margin: 10px 0 0 10px;
 	font-size: 14px;
 }
 #ticket p span{
@@ -168,7 +189,7 @@ padding: 0px 40px 0px 40px;
 	position: absolute;	
 	width: 960px;
 	background: transparent;
-	margin-top: 120px;
+	margin-top: 90px;
 	color:#fff;
 	text-align: center;
 }
@@ -550,7 +571,7 @@ display: inline-block !important;
 	padding: 6px;
 }
 #patrocinan,#auspicios{
-	width: 50%;
+	width: 100%;
 	padding: 5px 0px;
 	text-align: center;
 	background: #fff;
@@ -558,10 +579,7 @@ display: inline-block !important;
 	float: left;
 }
 #patrocinan img{
-	width: 35%;
-}
-#auspicios .img-auspicio{
-	width: 30%;
+	width: 20%;
 }
 #patrocinan img , #auspicios img{
 	display: inline-block;
@@ -638,12 +656,3 @@ footer a{
 
 	margin-top: 10px;
 }
-
-
-
-
-
-
-
-
-

@@ -17,7 +17,6 @@
 			exit;
 		}
 	}
-
 ?>
 <!DOCTYPE HTML>
 <html lang="es-Es">
@@ -34,36 +33,6 @@
 	<script type="text/javascript" src="recursos/js/ext/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="recursos/js/jquery.countdown.js"></script>
 	<script type="text/javascript" src="recursos/js/jquery.countdown-es.js"></script>
-	
-	<!--========================Formulario Resultado DESACTIVADO
-	<script language="javascript">
-	$(document).ready(function() {
-	    $().ajaxStart(function() {
-	        $('#loading').show();
-	        $('#result').hide();
-	    }).ajaxStop(function() {
-	        $('#loading').hide();
-	        $('#result').fadeIn('slow');
-	    });
-	    $('#form, #fat, #fo3').submit(function() {
-	        $.ajax({
-	            type: 'POST',
-	            url: $(this).attr('action'),
-	            data: $(this).serialize(),
-	            success: function(data) {
-	                $('#result').html(data);
-	            }
-	        })
-	        return false;
-	    }); 
-	})  
-
-	function limpiar() {
-	setTimeout('document.fo3.reset()',2000);
-	return false;
-	}
-	</script>
-	==============================Formulario Resultado fin-->
 
 	<script type="text/javascript">
 	$(function () {
@@ -122,11 +91,11 @@
 	<div id="fb-root"></div>
 	<div id="encabezado">
 		<div id="sol"></div>
+
 		<header>
 			<div id="logo">
 				<img src="recursos/img/logo.png" />
 			</div>
-			<nav>
 				<div id="menutop">
 					<div id="reloj">
 						<center>	
@@ -137,17 +106,10 @@
 							</div>
 							</section>
 				 			<!--fin cuenta regresiva--> 
+				 			<a href="#fondobanner"><img src="recursos/img/ico-inicio.png" /></a>
 				 		</center>
 					</div>
 				</div>
-				<ul>
-					<li><a href="#evento">Sobre Flisol</a></li>
-					<li><a href="#lugar">Lugar del Evento</a></li>
-					<li><a href="#cronograma">Cronograma</a></li>
-					<li><a href="#organizadores">Organizadores</a></li>
-					<li><a href="#fondobanner">Inicio</a></li>
-				</ul>
-			</nav>
 			
 		<script type="text/javascript" src="recursos/js/scrolltop.js"></script>
 		</header>		
@@ -156,8 +118,20 @@
 	<div id="banner">
 	<div id="titulo">
 		<hgroup><h1>9no Festival Latinoamericano de Instalación de Software Libre- Flisol Peru 2013</h1></hgroup>
-	</div>	
+	</div>
+
 	<div id="info">
+<!--Neuvo Menu-->	
+			<div id="menu1">
+			<nav>
+				<ul>
+					<li><a href="#evento">Sobre Flisol</a></li>
+					<li><a href="#lugar">Lugar del Evento</a></li>
+					<li><a href="#cronograma">Cronograma</a></li>
+					<li><a href="#organizadores">Organizadores</a></li>
+				</ul>
+			</nav></div>
+
 	<div id="info-izquierda"<?php if (isset($error)) echo ' style="font-size: 10px; width: 100%; height: auto; background: #363636"'; ?>>	
 		<hgroup><h1>Sábado 27 de Abril</h1></hgroup>
 		<hgroup><div class="lema"><h3>
@@ -315,7 +289,7 @@
 				</div>
 				<div id="auspicios">
 					<h3>Auspician</h3>
-					<a href="#"><img src="recursos/img/Patrocinan/eureka.png" class="img-auspicio"/></a>
+					<a href="http://innovaeureka.com/"><img src="recursos/img/Patrocinan/eureka.png" width="180px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/chicha-company.png" width="215px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/tacna.gif" width="120px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/radio-cmf.png" width="170px"/></a>

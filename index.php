@@ -161,7 +161,7 @@
 	<!--<div id="info-centro">
 	</div>-->
 	<div id="info-derecha"<?php if (isset($error)) echo ' style="display: none"'; ?>>
-		<object width="650" height="400"><param name="movie" value="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/FvLJ2JotttM?hl=es_MX&amp;version=3" type="application/x-shockwave-flash" width="650" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+		<object width="650" height="400"><param name="movie" value="http://www.youtube-nocookie.com/v/ut5s3ESEL5Q?version=3&amp;hl=es_MX"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/ut5s3ESEL5Q?version=3&amp;hl=es_MX" type="application/x-shockwave-flash" width="650" height="400" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 	</div>
 	</div>
 	</div>
@@ -295,7 +295,7 @@
 					<a href="#"><img src="recursos/img/Patrocinan/radio-cmf.png" width="170px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/logo-ebenezer.png"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/coyotex.png" /></a>
-				</div>
+				</div> 
 		</div>
 		<footer>
 			<img src="recursos/img/pie1.png">

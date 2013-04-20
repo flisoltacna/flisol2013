@@ -295,6 +295,7 @@
 					<a href="#"><img src="recursos/img/Patrocinan/radio-cmf.png" width="170px"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/logo-ebenezer.png"/></a>
 					<a href="#"><img src="recursos/img/Patrocinan/coyotex.png" /></a>
+					<a href="#"><img src="recursos/img/Patrocinan/SUPER_STEREO.png" width="170px"/></a>
 				</div> 
 		</div>
 		<footer>

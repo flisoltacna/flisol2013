@@ -14,6 +14,11 @@ function fecha() {
 	return $fecha;
 }
 
+function ucfirst_upp($c){
+    $cadena = strtr(strtoupper($c),"àáâãäåæçèéêëìíîïðñòóôõöøùüú", "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÜÚ");
+    return $cadena;
+}
+
 function validar_campo($texto, $expresion) {
 	return preg_match("/$expresion/i", $texto);
 }

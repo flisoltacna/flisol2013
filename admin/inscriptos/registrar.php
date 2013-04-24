@@ -21,8 +21,8 @@
 		return 4;
 	}
 
-	$nombre = strtoupper(utf8_decode($_POST["nombre"]));
-	$apellidos = strtoupper(utf8_decode($_POST["apellidos"]));
+	$nombre = ucfirst_upp($_POST["nombre"]);
+	$apellidos = ucfirst_upp($_POST["apellidos"]);
 	$dni = $_POST["dni"];
 	$email = $_POST["email"];
 	$fono = $_POST["fono"];

@@ -1,0 +1,185 @@
+body{
+	background: url("../../recursos/img/blue.png")no-repeat center;	
+	o-background-size:100% 100%;             /*  Opera  */
+    -webkit-background-size:100% 100%;        /*  Safari  */
+    -khtml-background-size:100% 100%;         /*  Konqueror  */
+    background-repeat:no-repeat;
+    background-attachment:fixed; 
+	color:#424242;
+}
+::selection {
+background: #005C99;
+} 
+h1{
+	margin: 0;
+	color:#fff;
+	font-size:25px;
+	font-family: 'Julius Sans One', sans-serif;
+	font-weight: normal;
+	text-shadow: 0px 0px 10px #FFF;
+}
+#contenedor{
+	width: 1000px;
+	height: auto;
+	margin: 0 auto;
+}
+header{
+	width: 100%;
+	text-align: right;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #F39A16;
+}
+#titulo{
+	width: 700px;
+	height: 60px;
+	text-align: center;
+	display: inline-block;
+	float: left;
+	padding-top: 5px;
+}
+#logo{
+	width: 300px;
+	height: 60px;
+	background:transparent; ;
+	display: inline-block;
+}
+#logo img{
+	width: 100%;
+	height: 100%;
+}
+#modulos{
+	width: 100%;
+	height: auto;
+	background: transparent;
+	text-align: center;
+}
+#video{
+	width: 69%;
+	height: auto;
+	background: transparent;
+	display: inline-block;
+	float: left;
+}	
+#url{
+	width:650px;
+	height: 400px;
+	display: inline-block;
+}
+#chat{
+	width: 30%;
+	height: 500px;
+	display: inline-block;
+}
+iframe{
+	width: 100%;
+	height: 100%;
+}
+.publicidad{
+	width: 100%;
+	height: auto;
+	background: transparent;
+}
+#redsocial{
+	width: 220px;
+	background:#F39A16;
+	padding: 8px 0;
+	display: inline-block;
+
+}
+
+#redsocial img:hover{
+	transform: scale(1.2);
+-webkit-transform: scale(1.2);
+-moz-transform: scale(1.2);
+-o-transform: scale(1.2);
+duration: 0.2s;
+-webkit-transition-duration: 0.2s;
+-moz-transition-duration: 0.2s;
+-o-transition-duration: 0.2s;
+}
+#redsocial span {
+	font-family: 'Julius Sans One',sans-serif;
+	font-weight: normal;
+	font-size: 13px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 5px;
+	color: #fff; 
+}
+#info{
+	width: 446px;
+	display: inline-block;
+	float: right;
+	padding: 10px 10px;
+	color: #fff;
+	background: #414141;
+	font-size: 14px;
+	font-family: 'Advent Pro', sans-serif;
+	text-align: justify;
+}
+#auspicios{
+	width: 100%;
+	height: auto;
+	display: inline-block;
+}
+#auspicios img{
+ 	height: 40px;
+}
+
+@media screen and (max-width:800px){ 
+	#contenedor{
+		width: 100%;
+	}
+	header{
+	margin-bottom: 0;
+		}	
+	 #titulo{
+	 	width: 100%;
+	 	height: auto;
+	 }
+	#logo{
+		width: 100%;
+		background: url("../../recursos/img/lin.png") repeat-x center;
+	}
+	#logo img{
+	width: 300px;
+	height: auto;
+		} 
+	#url{
+	width:100%;
+	height: 400px;
+		}
+	#video{
+	width: 100%;
+		}	
+	.publicidad{
+		display: none;
+		}
+	#chat{
+	width: 100%;
+	height: 400px;
+		}	
+	#auspicios{
+		background: #909396;
+		}
+}
+@media screen and (max-width:500px){ 
+		h1{
+			font-size: 20px;
+		}
+		#url{
+		height: 300px;
+		}
+}
+@media screen and (max-width:350px){ 
+	h1{
+		font-size: 13px;
+		padding-bottom: 5px;
+	}
+	#logo {
+		height: auto;
+	}
+	#logo img{
+	width: 150px;
+	}
+}

@@ -1,9 +1,10 @@
 <?php 
 	require_once('modelo.php');
+	require_once('../../recursos/funciones.php');
 
 	if(isset($_POST['agregar_inscripcion'])){
-		$nombres=strtoupper(utf8_decode($_POST["nombres"]));
-		$apellidos=strtoupper(utf8_decode($_POST["apellidos"]));
+		$nombres=ucfirst_upp($_POST["nombres"]);
+		$apellidos=ucfirst_upp($_POST["apellidos"]);
 		$fecha = fecha_hora();
 		$email = $_POST['email'];
 		$dni = $_POST['dni'];
@@ -33,8 +34,8 @@
 	}
 
 	if(isset($_POST['actualizar_inscripcion'])){
-		$nombres=strtoupper(utf8_decode($_POST["nombres"]));
-		$apellidos=strtoupper(utf8_decode($_POST["apellidos"]));
+		$nombres=ucfirst_upp($_POST["nombres"]);
+		$apellidos=ucfirst_upp($_POST["apellidos"]);
 		$email = $_POST['email'];
 		$dni = $_POST['dni'];
 		$telefono = $_POST['telefono'];

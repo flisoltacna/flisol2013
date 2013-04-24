@@ -61,7 +61,7 @@
 							<td><input type="checkbox" name="inscriptoid" value="<?php echo $inscripto['id'];?>"></td>
 							<td><?php echo $inscripto['id']; ?></td>
 							<td>
-								<?php echo utf8_encode($inscripto['nombres'].' '.$inscripto['apellidos']); ?>
+								<?php echo $inscripto['nombres'].' '.$inscripto['apellidos']; ?>
 								<?php if($inscripto['certificado']):?>
 									<span class="label label-success pull-right">Con certificado</span>
 								<?php else: ?>

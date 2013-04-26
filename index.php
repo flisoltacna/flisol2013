@@ -141,9 +141,7 @@
 			$total = query("SELECT MAX(id) AS total FROM inscriptos");
 			$disponible = 300 - (int)$total['total'];
 		?>
-		<div id="logolive">
-		<img src="recursos/img/logo.png">
-		</div>
+	
 		<div id="total">
 			<h4><?php echo $disponible;?><span>Entradas disponibles</span></h4>
 		</div>

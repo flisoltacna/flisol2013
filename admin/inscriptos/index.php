@@ -62,18 +62,20 @@
 							<td><?php echo $inscripto['id']; ?></td>
 							<td>
 								<?php echo $inscripto['nombres'].' '.$inscripto['apellidos']; ?>
-								<?php if($inscripto['certificado']):?>
-									<span class="label label-success pull-right">Con certificado</span>
+								<?php if($inscripto['certificado'] == 1):?>
+									<span name="certificado" title="Cancelar certificado" class="label label-success pull-right" data-id="<?php echo $inscripto['id']; ?>">Con certificado</span>
 								<?php else: ?>
-									<span class="label label-important pull-right">Sin certificado</span>
+									<span name="certificado" title="Asignar certificado" class="label label-important pull-right" data-id="<?php echo $inscripto['id']; ?>">Sin certificado</span>
 								<?php endif;?>
 							</td>
-							<td>								
-								<?php if($inscripto['asistencia']):?>
-									<a href="#"><img src="../../recursos/img/tick.png"></a>
-								<?php else: ?>
-									<a href="#"><img src="../../recursos/img/delete.png"></a>
-								<?php endif;?>
+							<td class="center">
+								<label style="display:inline; width: 100%">
+									<?php if($inscripto['asistencia'] == 1): ?>
+										<input type="checkbox" name="asistencia" style="width: 100%" title="Desmarcar asistencia" checked data-id="<?php echo $inscripto['id']; ?>" />
+									<?php else: ?>
+										<input type="checkbox" name="asistencia" style="width: 100%" title="Marcar asistencia" data-id="<?php echo $inscripto['id']; ?>" />
+									<?php endif; ?>
+								</label>
 							</td>
 							<td><?php echo utf8_encode($inscripto['email']); ?></td>
 							<td><?php echo utf8_encode($inscripto['telefono']); ?></td>
@@ -149,11 +151,79 @@
 				event.preventDefault();
 				event.stopPropagation();
 			}
-		});		
+		});
+
+		// Para la confirmación y cancelación de asistencia
+		$("input[name='asistencia']").change(function (event) {
+			$(this).attr("disabled", true);
+			$.ajax({
+				url: "verificar.php?accion=1&id=" + $(this).data("id") + "&valor=" + ($(this).attr("checked") ? "1" : "0"),
+				context: this
+			}).done(function (data) {
+				if (data == "1") {
+					alertify.success("Actualizado correctamente");
+				} else {
+					alertify.error("Ocurrió un error");
+					$(this).attr("checked", !$(this).attr("checked"));
+				}
+			}).fail(function () {
+				alertify.error("Ocurrió un error");
+				$(this).attr("checked", !$(this).attr("checked"));
+			}).always(function () {
+				$(this).attr("disabled", false);
+				if ($(this).attr("checked")) {
+					$(this).attr("title", "Desmarcar asistencia");
+				} else {
+					$(this).attr("title", "Marcar asistencia");
+				}
+			});
+		});
+
+		// Para la asignación y cancelación de certificado
+		$("span[name='certificado']").click(function (event) {
+			if ($(this).text() == "Procesando") return ;
+
+			var certificado = ($(this).text() == "Con certificado");
+
+			if (certificado) {
+				if (!confirm("¿Está seguro que desea cancelar el certificado?")) return ;
+			}
+
+			$(this).removeClass("label-success").removeClass("label-important").addClass("label-warning").text("Procesando").attr("title" ,"Procesando");
+
+			$.ajax({
+				url: "verificar.php?accion=2&id=" + $(this).data("id") + "&valor=" + (!certificado ? "1" : "0"),
+				context: this
+			}).done(function (data) {
+				if (data == "1") {
+					alertify.success("Actualizado correctamente");
+					cambiarEtiqueta(!certificado, this);
+				} else {
+					alertify.error("Ocurrió un error");
+					cambiarEtiqueta(certificado, this);
+				}
+			}).fail(function () {
+				alertify.error("Ocurrió un error");
+				cambiarEtiqueta(certificado, this);
+			});
+		});
+
+		alertify.set({delay: 2000});
+
+		function cambiarEtiqueta(certificado, obj) {
+			if (certificado) {
+				$(obj).removeClass("label-warning").addClass("label-success").text("Con certificado").attr("title", "Cancelar certificado");
+			} else {
+				$(obj).removeClass("label-warning").addClass("label-important").text("Sin certificado").attr("title", "Asignar certificado");
+			}
+		}
 	</script>
 	<style type="text/css">
 		.form-horizontal{
 			display:inline-block
+		}
+		span[name='certificado'] {
+			cursor: pointer;
 		}
 	</style>
 <?php footer();?>

@@ -14,10 +14,13 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/estilo.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/alertify.core.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo URL_APP;?>recursos/css/alertify.default.css" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="<?php echo URL_APP;?>recursos/js/jquery.dataTables.min.js"></script>
 	<script src="<?php echo URL_APP;?>recursos/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="<?php echo URL_APP;?>recursos/js/alertify.min.js"></script>
 	<!--<script src="<?php //echo URL_APP;?>recursos/js/script.js"></script>-->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

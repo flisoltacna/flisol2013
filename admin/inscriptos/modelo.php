@@ -14,4 +14,12 @@
 	function eliminar_inscripcion($id_inscripto){
 		return consulta("DELETE FROM inscriptos WHERE id = '".$id_inscripto."'");
 	}
+
+	function actualizar_asistencia($id, $valor) {
+		return consulta("UPDATE inscriptos SET asistencia = '$valor' WHERE id = '$id'");
+	}
+
+	function actualizar_certificado($id, $valor) {
+		return consulta("UPDATE inscriptos SET certificado = '$valor' WHERE id = '$id'");
+	}
 ?>

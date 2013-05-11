@@ -78,5 +78,21 @@
 			}
 		}
 	}
+
+	if (isset($_GET['accion']) && isset($_GET['id']) && isset($_GET['valor'])) {
+		if ($_GET['accion'] == 1) {
+			if (actualizar_asistencia($_GET['id'], $_GET['valor'])) {
+				return true;
+			} else {
+				return false;
+			}
+		} elseif ($_GET['accion'] == 2) {
+			if (actualizar_certificado($_GET['id'], $_GET['valor'])) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
 	
 ?>

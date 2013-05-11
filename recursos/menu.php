@@ -21,6 +21,9 @@
 						<li <?php if($activo == 'encuestas'){ echo 'class="active"'; } ?> >
 							<a href="../encuestas">Encuestas</a>
 						</li>
+						<li <?php if($activo == 'informe'){ echo 'class="active"'; } ?> >
+							<a href="../informe">Informe</a>
+						</li>
 						<li <?php if($activo == 'ver_pagina'){ echo 'class="active"'; } ?> >
 							<a href="../../index.php" target="_blank">Ver página</a>
 						</li>

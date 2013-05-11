@@ -55,7 +55,7 @@
 										<a class="btn btn-warning" title="Editar encuesta" href="editar.php?id=<?php echo $encuesta['id']?>">
 											<i class="icon-pencil icon-white"></i>
 										</a>
-										<a class="btn btn-info" title="Ver encuesta" href="encuesta.php?id=<?php echo $encuesta['id']?>">
+										<a class="btn btn-info" title="Resultados" href="resultados.php?id=<?php echo $encuesta['id']?>">
 											<i class="icon-search icon-white"></i>
 										</a>
 										<a class="btn btn-danger" onclick="return confirm('¿Está seguro?');" title="Eliminar" href="#">

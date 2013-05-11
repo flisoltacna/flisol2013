@@ -196,15 +196,18 @@ a.block-menu{
     }
 }
 /*===================== LISTADO DE OPCIONES ================================ */
-ul.listado {
+ul.listado, ul.listado-report{
     margin:10px 0 20px;
     padding:0;
+}
+ul.listado-report h6{
+    font-size: 16px;
 }
 ul.listado li a img{
     width:140px;
     height:120px;
 }
-ul.listado li {
+ul.listado li,ul.listado-report li{
     display:block;
     margin:0;
     padding: 0 7px 5px;
